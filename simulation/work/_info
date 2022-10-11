@@ -1,0 +1,68 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/21.1
+T_opt
+!s110 1649944364
+VM_@5M3NM;ble4f_Kf9HCO2
+04 26 4 work system_reset_controller_tb fast 0
+=1-ee4a8f853293-62582729-fa-1ab0
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vsystem_reset_controller
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1649944241
+!i10b 1
+!s100 C`PUm<UX?V2M`:lcMDWT?2
+IioBVmdAYJzLn41KG;=NEz2
+S1
+Z1 dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation
+w1649944228
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv
+!i122 2
+L0 3 18
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1649944240.000000
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv|
+!i113 0
+o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vsystem_reset_controller_tb
+!s110 1649944119
+!i10b 1
+!s100 O;m:??:SfWF3Dc]Sfj3QE2
+IR`=Xk`e]iBkOLIRfRFB:n2
+R1
+w1649875923
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v
+!i122 1
+L0 1 28
+R2
+R3
+r1
+!s85 0
+31
+!s108 1649944119.000000
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0

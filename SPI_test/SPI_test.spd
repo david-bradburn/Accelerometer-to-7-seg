@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/spiphyslave.v"
+   type="VERILOG"
+   library="spislave_0" />
+ <file path="simulation/SPI_test.v" type="VERILOG" />
+ <topLevel name="SPI_test" />
+ <deviceFamily name="max10" />
+</simPackage>

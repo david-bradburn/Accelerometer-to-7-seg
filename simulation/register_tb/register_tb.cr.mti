@@ -1,0 +1,6 @@
+C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv {0 {vlog -work work -vopt -sv -stats=none C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module register_memory
+** Error: (vlog-13069) C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv(24): near "'h": syntax error, unexpected BASE, expecting ':'.
+
+} {4.0 5.0} {}}

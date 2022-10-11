@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at i2c_controller.v(138): always construct contains both blocking and non-blocking assignments File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v Line: 138

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.01.14.17:32:50"
+ outputDirectory="C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="MAX 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="10M50DAF484C7G"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_SINK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_SINK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_SINK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="avalon_streaming_sink" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clock_sink" />
+   <property name="associatedReset" value="clock_sink_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="stsinkvalid" direction="input" role="valid" width="1" />
+   <port name="stsinkdata" direction="input" role="data" width="8" />
+   <port name="stsinkready" direction="output" role="ready" width="1" />
+  </interface>
+  <interface name="avalon_streaming_source" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clock_sink" />
+   <property name="associatedReset" value="clock_sink_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="stsourceready" direction="input" role="ready" width="1" />
+   <port name="stsourcevalid" direction="output" role="valid" width="1" />
+   <port name="stsourcedata" direction="output" role="data" width="8" />
+  </interface>
+  <interface name="clock_sink" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="sysclk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clock_sink_reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock_sink" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="nreset" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="export_0" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="mosi" direction="input" role="mosi" width="1" />
+   <port name="nss" direction="input" role="nss" width="1" />
+   <port name="miso" direction="bidir" role="miso" width="1" />
+   <port name="sclk" direction="input" role="sclk" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="SPI_test:1.0:AUTO_CLOCK_SINK_CLOCK_DOMAIN=-1,AUTO_CLOCK_SINK_CLOCK_RATE=-1,AUTO_CLOCK_SINK_RESET_DOMAIN=-1,AUTO_DEVICE=10M50DAF484C7G,AUTO_DEVICE_FAMILY=MAX 10,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1642181570,AUTO_UNIQUE_ID=(spislave:20.1:AUTO_CLOCK_SINK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=MAX 10,SYNC_DEPTH=2)"
+   instancePathKey="SPI_test"
+   kind="SPI_test"
+   version="1.0"
+   name="SPI_test">
+  <parameter name="AUTO_GENERATION_ID" value="1642181570" />
+  <parameter name="AUTO_DEVICE" value="10M50DAF484C7G" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="MAX 10" />
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_SINK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/synthesis/SPI_test.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/synthesis/submodules/spiphyslave.v"
+       type="VERILOG" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave_hw.tcl" />
+   <file
+       path="D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave.v" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="SPI_test">queue size: 0 starting:SPI_test "SPI_test"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="SPI_test"><![CDATA["<b>SPI_test</b>" reuses <b>spislave</b> "<b>submodules/SPIPhy</b>"]]></message>
+   <message level="Debug" culprit="SPI_test">queue size: 0 starting:spislave "submodules/SPIPhy"</message>
+   <message level="Debug">set ALTERA_HW_TCL_KEEP_TEMP_FILES=1 to retain temp files</message>
+   <message level="Debug">Command: D:/max10/lite/quartus\bin64/quartus_map.exe not_a_project --generate_hdl_interface=D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave.v --source=D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave.v --set=HDL_INTERFACE_OUTPUT_PATH=C:/Users/david/AppData/Local/Temp/alt9006_6718465232374911250.dir/0003_sopcqmap/ --ini=disable_check_quartus_compatibility_qsys_only=on</message>
+   <message level="Debug">Command took 0.703s</message>
+   <message level="Info" culprit="spislave_0"><![CDATA["<b>SPI_test</b>" instantiated <b>spislave</b> "<b>spislave_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="spislave:20.1:AUTO_CLOCK_SINK_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=MAX 10,SYNC_DEPTH=2"
+   instancePathKey="SPI_test:.:spislave_0"
+   kind="spislave"
+   version="20.1"
+   name="SPIPhy">
+  <parameter name="AUTO_DEVICE_FAMILY" value="MAX 10" />
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="0" />
+  <generatedFiles>
+   <file
+       path="C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/synthesis/submodules/spiphyslave.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave_hw.tcl" />
+   <file
+       path="D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="SPI_test" as="spislave_0" />
+  <messages>
+   <message level="Debug" culprit="SPI_test">queue size: 0 starting:spislave "submodules/SPIPhy"</message>
+   <message level="Debug">set ALTERA_HW_TCL_KEEP_TEMP_FILES=1 to retain temp files</message>
+   <message level="Debug">Command: D:/max10/lite/quartus\bin64/quartus_map.exe not_a_project --generate_hdl_interface=D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave.v --source=D:/max10/lite/ip/altera/sopc_builder_ip/altera_avalon_spi_phy_slave/spiphyslave.v --set=HDL_INTERFACE_OUTPUT_PATH=C:/Users/david/AppData/Local/Temp/alt9006_6718465232374911250.dir/0003_sopcqmap/ --ini=disable_check_quartus_compatibility_qsys_only=on</message>
+   <message level="Debug">Command took 0.703s</message>
+   <message level="Info" culprit="spislave_0"><![CDATA["<b>SPI_test</b>" instantiated <b>spislave</b> "<b>spislave_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

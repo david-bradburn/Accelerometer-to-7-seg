@@ -1,0 +1,23 @@
+
+`default_nettype wire
+
+module i2c_controller(
+
+	input clk,
+
+	output wire		          		GSENSOR_CS_N, //tied to high
+	input  reg 		     [2:1]		GSENSOR_INT,  //this can just be ignored
+	output wire		          		GSENSOR_SCL,
+	inout   		          		   GSENSOR_SDA,
+	inout  wire		          		ALT_ADDRESS  //tied to 0
+);
+
+assign ATL_ADDRESS = 0;
+
+
+
+
+endmodule
+
+`default_nettype none
+

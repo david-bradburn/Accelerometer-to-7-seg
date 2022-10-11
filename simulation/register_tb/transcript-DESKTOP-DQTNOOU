@@ -1,0 +1,81 @@
+# Compile of register_memory.sv was successful.
+# Compile of register_memory_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.register_memory_tb
+# vsim -gui work.register_memory_tb 
+# Start time: 16:00:00 on Apr 18,2022
+# Loading sv_std.std
+# Loading work.register_memory_tb
+# Loading work.register_memory
+# ** Error: (vsim-3033) Instantiation of 'system_reset_controller' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 25
+#         Searched libraries:
+#             C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation/register_tb/work
+# Error loading design
+# End time: 16:00:01 on Apr 18,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 3
+vsim work.register_memory_tb
+# vsim work.register_memory_tb 
+# Start time: 16:00:15 on Apr 18,2022
+# Loading sv_std.std
+# Loading work.register_memory_tb
+# Loading work.register_memory
+# ** Error: (vsim-3033) Instantiation of 'system_reset_controller' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 25
+#         Searched libraries:
+#             C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation/register_tb/work
+# Error loading design
+# End time: 16:00:15 on Apr 18,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of register_memory.sv was successful.
+# Compile of register_memory_tb.sv was successful.
+# Compile of system_reset_controller.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.register_memory_tb
+# vsim work.register_memory_tb 
+# Start time: 16:01:22 on Apr 18,2022
+# Loading sv_std.std
+# Loading work.register_memory_tb
+# Loading work.register_memory
+# Loading work.system_reset_controller
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 5, found 3.
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb/DUT File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 16
+# ** Warning: (vsim-3722) C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv(16): [TFMPC] - Missing connection for port 'reg_data'.
+# ** Warning: (vsim-3722) C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv(16): [TFMPC] - Missing connection for port 'error_code'.
+# ** Error (suppressible): (vsim-3389) Port 'reg_addr' not found in the connected module (3rd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb/rst_controller File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 25
+# ** Error (suppressible): (vsim-3389) Port 'reg_data' not found in the connected module (4th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb/rst_controller File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 25
+# ** Error (suppressible): (vsim-3389) Port 'error_code' not found in the connected module (5th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb/rst_controller File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 25
+# Error loading design
+# End time: 16:01:23 on Apr 18,2022, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 6
+vsim work.register_memory
+# vsim work.register_memory 
+# Start time: 16:01:40 on Apr 18,2022
+# Loading sv_std.std
+# Loading work.register_memory
+quit -sim
+# End time: 16:02:00 on Apr 18,2022, Elapsed time: 0:00:20
+# Errors: 0, Warnings: 2
+# Compile of register_memory.sv was successful.
+# Compile of register_memory_tb.sv failed with 1 errors.
+# Compile of system_reset_controller.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of register_memory.sv was successful.
+# Compile of register_memory_tb.sv was successful.
+# Compile of system_reset_controller.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.register_memory_tb
+# vsim work.register_memory_tb 
+# Start time: 16:03:05 on Apr 18,2022
+# Loading sv_std.std
+# Loading work.register_memory_tb
+# Loading work.register_memory
+# Loading work.system_reset_controller
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (8) for port 'reg_addr'. The port definition is at: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv(9).
+#    Time: 0 ns  Iteration: 0  Instance: /register_memory_tb/DUT File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv Line: 16
+# WARNING: No extended dataflow license exists
+# End time: 16:03:21 on Apr 18,2022, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 4

@@ -5,7 +5,7 @@
 set_global_assignment -name FAMILY "MAX 10 FPGA"
 set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY "Accerleromter"
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION "16.0.0"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:24:30 OCTOBER 12,2021"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
@@ -125,10 +125,111 @@ set_location_assignment PIN_L19 -to HEX5[7]
 #============================================================
 # KEY
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to KEY[0]
-set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to KEY[1]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[1]
 set_location_assignment PIN_B8 -to KEY[0]
 set_location_assignment PIN_A7 -to KEY[1]
+
+#============================================================
+# LED
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9]
+set_location_assignment PIN_A8 -to LEDR[0]
+set_location_assignment PIN_A9 -to LEDR[1]
+set_location_assignment PIN_A10 -to LEDR[2]
+set_location_assignment PIN_B10 -to LEDR[3]
+set_location_assignment PIN_D13 -to LEDR[4]
+set_location_assignment PIN_C13 -to LEDR[5]
+set_location_assignment PIN_E14 -to LEDR[6]
+set_location_assignment PIN_D14 -to LEDR[7]
+set_location_assignment PIN_A11 -to LEDR[8]
+set_location_assignment PIN_B11 -to LEDR[9]
+
+
+#============================================================
+# GPIO, GPIO connect to GPIO Default
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[34]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to debugGPIO[35]
+set_location_assignment PIN_V10 -to debugGPIO[0]
+set_location_assignment PIN_W10 -to debugGPIO[1]
+set_location_assignment PIN_V9 -to debugGPIO[2]
+set_location_assignment PIN_W9 -to debugGPIO[3]
+set_location_assignment PIN_V8 -to debugGPIO[4]
+set_location_assignment PIN_W8 -to debugGPIO[5]
+set_location_assignment PIN_V7 -to debugGPIO[6]
+set_location_assignment PIN_W7 -to debugGPIO[7]
+set_location_assignment PIN_W6 -to debugGPIO[8]
+set_location_assignment PIN_V5 -to debugGPIO[9]
+set_location_assignment PIN_W5 -to debugGPIO[10]
+set_location_assignment PIN_AA15 -to debugGPIO[11]
+set_location_assignment PIN_AA14 -to debugGPIO[12]
+set_location_assignment PIN_W13 -to debugGPIO[13]
+set_location_assignment PIN_W12 -to debugGPIO[14]
+set_location_assignment PIN_AB13 -to debugGPIO[15]
+set_location_assignment PIN_AB12 -to debugGPIO[16]
+set_location_assignment PIN_Y11 -to debugGPIO[17]
+set_location_assignment PIN_AB11 -to debugGPIO[18]
+set_location_assignment PIN_W11 -to debugGPIO[19]
+set_location_assignment PIN_AB10 -to debugGPIO[20]
+set_location_assignment PIN_AA10 -to debugGPIO[21]
+set_location_assignment PIN_AA9 -to debugGPIO[22]
+set_location_assignment PIN_Y8 -to debugGPIO[23]
+set_location_assignment PIN_AA8 -to debugGPIO[24]
+set_location_assignment PIN_Y7 -to debugGPIO[25]
+set_location_assignment PIN_AA7 -to debugGPIO[26]
+set_location_assignment PIN_Y6 -to debugGPIO[27]
+set_location_assignment PIN_AA6 -to debugGPIO[28]
+set_location_assignment PIN_Y5 -to debugGPIO[29]
+set_location_assignment PIN_AA5 -to debugGPIO[30]
+set_location_assignment PIN_Y4 -to debugGPIO[31]
+set_location_assignment PIN_AB3 -to debugGPIO[32]
+set_location_assignment PIN_Y3 -to debugGPIO[33]
+set_location_assignment PIN_AB2 -to debugGPIO[34]
+set_location_assignment PIN_AA2 -to debugGPIO[35]
 
 #============================================================
 # Accelerometer
@@ -158,9 +259,13 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VERILOG_FILE Accerleromter.v
+set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name VERILOG_FILE src/i2c_controller.v
+set_global_assignment -name VERILOG_FILE src/Accerleromter.v
 set_global_assignment -name SDC_FILE Accerleromter.SDC
+set_global_assignment -name SYSTEMVERILOG_FILE system_reset_controller.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

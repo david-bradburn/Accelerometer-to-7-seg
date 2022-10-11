@@ -1,0 +1,91 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation
+T_opt
+!s110 1650189242
+VB=14eU`ZCDjMK>`^hGF4O1
+Z2 04 17 4 work i2c_controller_tb fast 0
+=2-548ca0a3c119-625be3b7-f6-3d3c
+Z3 !s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+T_opt1
+!s110 1649973510
+V2ZQXZfRQc=ek?3[>zK5aG0
+R2
+=1-548ca0a3c119-62589904-ca-1534
+R3
+o-quiet -auto_acc_if_foreign -work work
+R4
+n@_opt1
+R5
+R1
+vi2c_controller
+!s110 1650189227
+!i10b 1
+!s100 <4GQD?CHN4mR0M]?3g>2k3
+IjDRdcBQ`I?LhWIRX8;EZ10
+Z6 dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation/i2c_tb
+w1650189035
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v
+!i122 43
+L0 5 193
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1650189226.000000
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v|
+!i113 0
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vi2c_controller_tb
+!s110 1650189226
+!i10b 1
+!s100 PXW8o7fdVd_d>o_R22YKF3
+IZ7c?0[ekz[l@ZlgOLIgHL0
+R6
+w1650127508
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller_tb.v
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller_tb.v
+!i122 42
+L0 1 77
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller_tb.v|
+!i113 0
+R10
+R4

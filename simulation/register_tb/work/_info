@@ -1,0 +1,83 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation/i2c_tb
+vregister_memory
+Z0 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z1 !s110 1658678197
+!i10b 1
+!s100 6G01`P;RbD4_[[XfP4bH]0
+ISDY1LBigkhOC_cC8ZFLTj2
+S1
+Z2 dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation/register_tb
+w1650308197
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv
+!i122 12
+L0 2 35
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1658678195.000000
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory.sv|
+!i113 0
+Z5 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
+vregister_memory_tb
+R0
+R1
+!i10b 1
+!s100 FZ:4]N1_Q46diegLX]0Te1
+IKS@d`fR=DLCRJ6MJMd9ja0
+S1
+R2
+w1650294168
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv
+!i122 13
+L0 2 40
+R3
+R4
+r1
+!s85 0
+31
+Z7 !s108 1658678197.000000
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/register_memory_tb.sv|
+!i113 0
+R5
+R6
+vsystem_reset_controller
+R0
+!s110 1658678198
+!i10b 1
+!s100 C`PUm<UX?V2M`:lcMDWT?2
+IioBVmdAYJzLn41KG;=NEz2
+S1
+R2
+w1649944228
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv
+!i122 14
+L0 3 18
+R3
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv|
+!i113 0
+R5
+R6

@@ -1,0 +1,15 @@
+C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v {1 {vlog -work work -vopt -stats=none C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module i2c_controller
+
+Top level modules:
+	i2c_controller
+
+} {} {}} C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller_tb.v {1 {vlog -work work -vopt -stats=none C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/i2c_controller_tb.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module i2c_controller_tb
+
+Top level modules:
+	i2c_controller_tb
+
+} {} {}}

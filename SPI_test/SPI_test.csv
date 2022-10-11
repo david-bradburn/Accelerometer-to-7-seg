@@ -1,0 +1,18 @@
+# system info SPI_test on 2022.01.14.17:32:49
+system_info:
+name,value
+DEVICE,10M50DAF484C7G
+DEVICE_FAMILY,MAX 10
+GENERATION_ID,1642181568
+#
+#
+# Files generated for SPI_test on 2022.01.14.17:32:49
+files:
+filepath,kind,attributes,module,is_top
+simulation/SPI_test.v,VERILOG,,SPI_test,true
+simulation/submodules/spiphyslave.v,VERILOG,,SPIPhy,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+SPI_test.spislave_0,SPIPhy

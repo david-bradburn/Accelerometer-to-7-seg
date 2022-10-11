@@ -1,0 +1,63 @@
+Info: Starting: Create simulation model
+Info: qsys-generate C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test\simulation --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading Accelerometer-to-7-seg/SPI_test.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 20.1]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SPI_test: Generating SPI_test "SPI_test" for SIM_VERILOG
+Info: spislave_0: "SPI_test" instantiated spislave "spislave_0"
+Info: SPI_test: Done "SPI_test" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test\SPI_test.spd --output-directory=C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test\SPI_test.spd --output-directory=C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/SPI_test/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test.qsys --block-symbol-file --output-directory=C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading Accelerometer-to-7-seg/SPI_test.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 20.1]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test.qsys --synthesis=VERILOG --output-directory=C:\Users\david\OneDrive\Documents\FPGA\DE10-Lite\Projects\Accelerometer-to-7-seg\SPI_test\synthesis --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading Accelerometer-to-7-seg/SPI_test.qsys
+Progress: Reading input file
+Progress: Adding spislave_0 [spislave 20.1]
+Progress: Parameterizing module spislave_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SPI_test: Generating SPI_test "SPI_test" for QUARTUS_SYNTH
+Info: spislave_0: "SPI_test" instantiated spislave "spislave_0"
+Info: SPI_test: Done "SPI_test" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
