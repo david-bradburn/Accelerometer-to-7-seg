@@ -1,0 +1,56 @@
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_controller_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.i2c_controller_tb
+# vsim -gui work.i2c_controller_tb 
+# Start time: 14:22:58 on Jan 19,2023
+# Loading work.i2c_controller_tb
+# Loading work.i2c_controller
+run
+run
+# WARNING: No extended dataflow license exists
+run -all
+add wave -position end  sim:/i2c_controller_tb/I2C_CLK_SPEED
+add wave -position end  sim:/i2c_controller_tb/SYS_CLK_SPEED
+add wave -position end  sim:/i2c_controller_tb/HALF_CLK_DELAY
+add wave -position end  sim:/i2c_controller_tb/clk
+add wave -position end  sim:/i2c_controller_tb/rst
+add wave -position end  sim:/i2c_controller_tb/GSENSOR_CS_N
+add wave -position end  sim:/i2c_controller_tb/GSENSOR_INT
+add wave -position end  sim:/i2c_controller_tb/GSENSOR_SCL
+add wave -position end  sim:/i2c_controller_tb/GSENSOR_SDA
+add wave -position end  sim:/i2c_controller_tb/ALT_ADDRESS
+add wave -position end  sim:/i2c_controller_tb/DEV_ADDR
+add wave -position end  sim:/i2c_controller_tb/REG_ADDR
+add wave -position end  sim:/i2c_controller_tb/R_W
+add wave -position end  sim:/i2c_controller_tb/WRITE_DATA
+add wave -position end  sim:/i2c_controller_tb/READ_DATA
+add wave -position end  sim:/i2c_controller_tb/DBG_STATE
+add wave -position end  sim:/i2c_controller_tb/DBG_VALS
+add wave -position end  sim:/i2c_controller_tb/start_i2c_comms
+add wave -position end  sim:/i2c_controller_tb/i2c_comms_finished
+add wave -position end  sim:/i2c_controller_tb/ready
+run
+run -all
+add wave -position insertpoint sim:/i2c_controller_tb/*
+add wave -position insertpoint sim:/i2c_controller_tb/*
+run -all
+run -all
+step -out
+step
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# Compile of i2c_controller.v was successful.
+# Compile of i2c_controller_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.i2c_controller_tb
+# Loading work.i2c_controller
+restart -f
+run -all
+# ** Note: $finish    : C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller_tb.v(69)
+#    Time: 1130 ps  Iteration: 0  Instance: /i2c_controller_tb
+# End time: 14:48:48 on Jan 19,2023, Elapsed time: 0:25:50
+# Errors: 0, Warnings: 0

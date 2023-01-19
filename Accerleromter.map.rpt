@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Accerleromter
-Thu Oct 06 16:52:35 2022
+Thu Jan 19 15:22:18 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,21 +10,8 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Accerleromter|i2c_controller:G_SENSOR_i2c|state
-  9. State Machine - |Accerleromter|i2c_controller:G_SENSOR_i2c|next_state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: system_reset_controller:rst_controller
- 15. Parameter Settings for User Entity Instance: i2c_controller:G_SENSOR_i2c
- 16. Port Connectivity Checks: "i2c_controller:G_SENSOR_i2c"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
+  6. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,22 +38,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 06 16:52:35 2022       ;
+; Analysis & Synthesis Status        ; Failed - Thu Jan 19 15:22:18 2023           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Accerleromter                               ;
 ; Top-level Entity Name              ; Accerleromter                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 254                                         ;
-;     Total combinational functions  ; 241                                         ;
-;     Dedicated logic registers      ; 107                                         ;
-; Total registers                    ; 107                                         ;
-; Total pins                         ; 103                                         ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
+; UFM blocks                         ; N/A until Partition Merge                   ;
+; ADC blocks                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -165,253 +152,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------+---------+
-; src/i2c_controller.v             ; yes             ; User Verilog HDL File        ; C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v       ;         ;
-; src/Accerleromter.v              ; yes             ; User Verilog HDL File        ; C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v        ;         ;
-; system_reset_controller.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------+---------+
-
-
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+---------------------------------------------+---------------------+
-; Resource                                    ; Usage               ;
-+---------------------------------------------+---------------------+
-; Estimated Total logic elements              ; 254                 ;
-;                                             ;                     ;
-; Total combinational functions               ; 241                 ;
-; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 127                 ;
-;     -- 3 input functions                    ; 24                  ;
-;     -- <=2 input functions                  ; 90                  ;
-;                                             ;                     ;
-; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 173                 ;
-;     -- arithmetic mode                      ; 68                  ;
-;                                             ;                     ;
-; Total registers                             ; 107                 ;
-;     -- Dedicated logic registers            ; 107                 ;
-;     -- I/O registers                        ; 0                   ;
-;                                             ;                     ;
-; I/O pins                                    ; 103                 ;
-;                                             ;                     ;
-; Embedded Multiplier 9-bit elements          ; 0                   ;
-;                                             ;                     ;
-; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
-; Maximum fan-out                             ; 107                 ;
-; Total fan-out                               ; 1165                ;
-; Average fan-out                             ; 2.10                ;
-+---------------------------------------------+---------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
-+---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-------------------------+--------------+
-; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                   ; Entity Name             ; Library Name ;
-+---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-------------------------+--------------+
-; |Accerleromter                              ; 241 (2)             ; 107 (2)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 103  ; 0            ; 0          ; |Accerleromter                                        ; Accerleromter           ; work         ;
-;    |i2c_controller:G_SENSOR_i2c|            ; 194 (194)           ; 73 (73)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Accerleromter|i2c_controller:G_SENSOR_i2c            ; i2c_controller          ; work         ;
-;    |system_reset_controller:rst_controller| ; 45 (45)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Accerleromter|system_reset_controller:rst_controller ; system_reset_controller ; work         ;
-+---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Accerleromter|i2c_controller:G_SENSOR_i2c|state                                                                                                                                                                                             ;
-+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-; Name           ; state.00001100 ; state.00001011 ; state.00001010 ; state.00001001 ; state.00001000 ; state.00000111 ; state.00000110 ; state.00000101 ; state.00000100 ; state.00000011 ; state.00000010 ; state.00000001 ; state.00000000 ; state.11111111 ;
-+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-; state.00000000 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ;
-; state.00000001 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1              ; 0              ;
-; state.00000010 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 1              ; 0              ;
-; state.00000011 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 1              ; 0              ;
-; state.00000100 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00000101 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00000110 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00000111 ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00001000 ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00001001 ; 0              ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00001010 ; 0              ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00001011 ; 0              ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.00001100 ; 1              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 0              ;
-; state.11111111 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ; 1              ; 1              ;
-+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Accerleromter|i2c_controller:G_SENSOR_i2c|next_state                                                                                                                                                                                                                                                                   ;
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-; Name                ; next_state.00001100 ; next_state.00001011 ; next_state.00001010 ; next_state.00001001 ; next_state.00001000 ; next_state.00000111 ; next_state.00000110 ; next_state.00000101 ; next_state.00000100 ; next_state.00000011 ; next_state.00000010 ; next_state.00000001 ; next_state.00000000 ; next_state.11111111 ;
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-; next_state.00000000 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ;
-; next_state.00000001 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 1                   ; 0                   ;
-; next_state.00000010 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00000011 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00000100 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00000101 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00000110 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00000111 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00001000 ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00001001 ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00001010 ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00001011 ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.00001100 ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ;
-; next_state.11111111 ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 1                   ;
-+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+
-
-
-+------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                       ;
-+-------------------------------------------------+----------------------------------------+
-; Register name                                   ; Reason for Removal                     ;
-+-------------------------------------------------+----------------------------------------+
-; R_W                                             ; Stuck at VCC due to stuck port data_in ;
-; register_address[0..7]                          ; Stuck at GND due to stuck port data_in ;
-; i2c_controller:G_SENSOR_i2c|scl_oe              ; Stuck at VCC due to stuck port data_in ;
-; i2c_controller:G_SENSOR_i2c|state~2             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|state~3             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|state~4             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|state~5             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|state~7             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|state~8             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|state~9             ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~16       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~17       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~18       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~19       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~21       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~22       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state~23       ; Lost fanout                            ;
-; i2c_controller:G_SENSOR_i2c|next_state.00000110 ; Stuck at GND due to stuck port data_in ;
-; i2c_controller:G_SENSOR_i2c|state.00000110      ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 26          ;                                        ;
-+-------------------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 107   ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 41    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------+
-; Inverted Register Statistics                         ;
-+--------------------------------------------+---------+
-; Inverted Register                          ; Fan out ;
-+--------------------------------------------+---------+
-; i2c_controller:G_SENSOR_i2c|past_ack       ; 11      ;
-; i2c_controller:G_SENSOR_i2c|reg_counter[2] ; 3       ;
-; i2c_controller:G_SENSOR_i2c|reg_counter[1] ; 3       ;
-; i2c_controller:G_SENSOR_i2c|reg_counter[0] ; 3       ;
-; Total number of inverted registers = 4     ;         ;
-+--------------------------------------------+---------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Accerleromter|i2c_controller:G_SENSOR_i2c|clk_count[4]   ;
-; 10:1               ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |Accerleromter|i2c_controller:G_SENSOR_i2c|reg_counter[3] ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 3 LEs                ; 15 LEs                 ; Yes        ; |Accerleromter|i2c_controller:G_SENSOR_i2c|reg_counter[2] ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |Accerleromter|i2c_controller:G_SENSOR_i2c|next_state     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: system_reset_controller:rst_controller ;
-+------------------+-------+----------------------------------------------------------+
-; Parameter Name   ; Value ; Type                                                     ;
-+------------------+-------+----------------------------------------------------------+
-; NO_OF_CLK_CYCLES ; 40    ; Signed Integer                                           ;
-+------------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: i2c_controller:G_SENSOR_i2c ;
-+----------------+----------+----------------------------------------------+
-; Parameter Name ; Value    ; Type                                         ;
-+----------------+----------+----------------------------------------------+
-; SYS_CLK_SPEED  ; 50000000 ; Signed Integer                               ;
-; I2C_CLK_SPEED  ; 100000   ; Signed Integer                               ;
-+----------------+----------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "i2c_controller:G_SENSOR_i2c"                                                                      ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port               ; Type   ; Severity ; Details                                                                             ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; DEV_ADDR[4..2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; DEV_ADDR[6..5]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DEV_ADDR[1]        ; Input  ; Info     ; Stuck at GND                                                                        ;
-; DEV_ADDR[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; READ_DATA          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; DBG_VALS[7..3]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; i2c_comms_finished ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 103                         ;
-; cycloneiii_ff         ; 107                         ;
-;     ENA               ; 41                          ;
-;     SCLR              ; 32                          ;
-;     plain             ; 34                          ;
-; cycloneiii_io_obuf    ; 3                           ;
-; cycloneiii_lcell_comb ; 245                         ;
-;     arith             ; 68                          ;
-;         2 data inputs ; 67                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 177                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 23                          ;
-;         4 data inputs ; 127                         ;
-;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 4.62                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:05     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -420,7 +165,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 06 16:52:18 2022
+    Info: Processing started: Thu Jan 19 15:22:11 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Accerleromter -c Accerleromter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -432,137 +177,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file system_
     Info (12023): Found entity 1: system_reset_controller File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv Line: 3
 Warning (10236): Verilog HDL Implicit Net warning at i2c_controller.v(65): created implicit net for "scl_start" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 65
 Info (12127): Elaborating entity "Accerleromter" for the top level hierarchy
-Warning (10034): Output port "HEX0" at Accerleromter.v(14) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-Warning (10034): Output port "HEX1" at Accerleromter.v(15) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-Warning (10034): Output port "HEX2" at Accerleromter.v(16) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-Warning (10034): Output port "HEX3" at Accerleromter.v(17) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-Warning (10034): Output port "HEX4" at Accerleromter.v(18) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-Warning (10034): Output port "HEX5" at Accerleromter.v(19) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-Warning (10034): Output port "debugGPIO[35..5]" at Accerleromter.v(28) has no driver File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-Info (12128): Elaborating entity "system_reset_controller" for hierarchy "system_reset_controller:rst_controller" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 51
-Warning (10230): Verilog HDL assignment warning at system_reset_controller.sv(12): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv Line: 12
-Info (12128): Elaborating entity "i2c_controller" for hierarchy "i2c_controller:G_SENSOR_i2c" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 101
-Warning (10036): Verilog HDL or VHDL warning at i2c_controller.v(55): object "transistion_state" assigned a value but never read File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 55
-Warning (10036): Verilog HDL or VHDL warning at i2c_controller.v(60): object "scl_2qtr" assigned a value but never read File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 60
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(65): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 65
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(66): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 66
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(67): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 67
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(68): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 68
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(163): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 163
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(192): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 192
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(238): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 238
-Warning (10230): Verilog HDL assignment warning at i2c_controller.v(270): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 270
-Info (10264): Verilog HDL Case Statement information at i2c_controller.v(137): all case item expressions in this case statement are onehot File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 137
-Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "GSENSOR_SDO" is fed by VCC File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 36
-Warning (13044): Always-enabled tri-state buffer(s) removed
-    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "i2c_controller:G_SENSOR_i2c|GSENSOR_SCL" to the node "GSENSOR_SCLK" into a wire File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 16
-    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "i2c_controller:G_SENSOR_i2c|GSENSOR_SCL" to the node "debugGPIO[1]" into a wire File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 16
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GSENSOR_SDO~synth" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 36
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 14
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 15
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 16
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 17
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 18
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 19
-    Warning (13410): Pin "LEDR[8]" is stuck at VCC File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 25
-    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 25
-    Warning (13410): Pin "debugGPIO[4]" is stuck at VCC File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[8]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[9]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[10]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[11]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[12]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[13]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[14]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[15]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[16]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[17]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[18]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[19]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[20]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[21]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[22]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[23]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[24]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[25]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[26]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[27]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[28]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[29]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[30]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[31]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[32]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[33]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[34]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "debugGPIO[35]" is stuck at GND File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Warning (13410): Pin "GSENSOR_CS_N" is stuck at VCC File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 31
-Info (286030): Timing-Driven Synthesis is running
-Warning (14632): Output pin "debugGPIO[0]" driven by bidirectional pin "GSENSOR_SDI" cannot be tri-stated File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-Info (17049): 14 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 22
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 22
-    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 32
-    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 32
-Info (21057): Implemented 357 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 96 output pins
-    Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 254 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 117 warnings
-    Info: Peak virtual memory: 4774 megabytes
-    Info: Processing ended: Thu Oct 06 16:52:35 2022
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:18
+Warning (10036): Verilog HDL or VHDL warning at Accerleromter.v(103): object "data_read" assigned a value but never read File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 103
+Error (10110): Verilog HDL error at Accerleromter.v(122): variable "refresh_rate_counter" has mixed blocking and nonblocking Procedural Assignments -- must be all blocking or all nonblocking assignments File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 122
+Error (12153): Can't elaborate top-level user hierarchy
+Info (144001): Generated suppressed messages file C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 3 warnings
+    Error: Peak virtual memory: 4702 megabytes
+    Error: Processing ended: Thu Jan 19 15:22:18 2023
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:16
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.map.smsg.
 
 
