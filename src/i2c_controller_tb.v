@@ -66,7 +66,7 @@ module i2c_controller_tb;
 
     #1000;
 
-    //$finish();
+    // $finish()
   end
 
   always begin
