@@ -1,3 +1,6 @@
+
+`include "types.svh"
+
 module i2c_controller_tb;
 
   // Parameters

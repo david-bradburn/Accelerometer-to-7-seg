@@ -12,4 +12,4 @@ typedef enum { IDLE = 0,
                RECEIVE_READ_DATA = 10,
                SEND_NACK = 11,
                STOP = 12,
-               ERROR = 255 } i2c_state_e;
+               ERROR = 255 } i2c_state_e; // might want to rename some of these state names cause they aren't great

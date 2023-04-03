@@ -1,6 +1,12 @@
 
 `default_nettype wire
-`include types.svh
+`include "types.svh"
+
+//TODO at somepoint
+// - Clock streching
+// - More debug
+// - Burst reads?
+// - Write this to be more general i2c module
 
 //NEED TO ADD CLOCKSPEED PARAMETER
 module i2c_controller #(
@@ -18,7 +24,7 @@ module i2c_controller #(
 	inout  wire       GSENSOR_SDA,
 	inout  wire       ALT_ADDRESS,  //tied to 0
 
-	input wire [6:0] DEV_ADDR, // 0x1D
+	input wire [6:0] DEV_ADDR, // 0x1D - for accelerometer
 	input wire [7:0] REG_ADDR,
 	input wire R_W,
 	input wire [7:0] WRITE_DATA,
