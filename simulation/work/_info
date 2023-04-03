@@ -1,15 +1,15 @@
 m255
 K4
 z2
+!s11f MIXED_VERSIONS
 !s99 nomlopt
-!s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/intelFPGA_lite/21.1
+Z0 dC:/intelFPGA_lite/21.1
 T_opt
 !s110 1649944364
 VM_@5M3NM;ble4f_Kf9HCO2
@@ -17,9 +17,56 @@ VM_@5M3NM;ble4f_Kf9HCO2
 =1-ee4a8f853293-62582729-fa-1ab0
 !s124 OEM10U2 
 o-quiet -auto_acc_if_foreign -work work +acc
-Z0 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.2;73
+R0
+vi2c_controller
+Z2 !s110 1674139702
+!i10b 1
+!s100 N?KR_:6TBmcoH>jC5OLM03
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I32gjmI0T4fQnGPoHVO4<;1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation
+w1658703387
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v
+!i122 5
+L0 5 339
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1674139702.000000
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v|
+!i113 1
+Z8 o-work work
+R1
+vi2c_controller_tb
+R2
+!i10b 1
+!s100 <h8:ca19G1lYQXlBH_bA_2
+R3
+I@C[PG8Xc1g3F@IX`OSYGM0
+R4
+R5
+w1674139697
+8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller_tb.v
+FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller_tb.v
+!i122 6
+L0 1 77
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller_tb.v|
+!i113 1
+R8
+R1
 vsystem_reset_controller
 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 !s110 1649944241
@@ -27,14 +74,14 @@ DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 !s100 C`PUm<UX?V2M`:lcMDWT?2
 IioBVmdAYJzLn41KG;=NEz2
 S1
-Z1 dC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/simulation
+R5
 w1649944228
 8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv
 FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv
 !i122 2
 L0 3 18
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 OL;L;2021.2;73
+R4
+Z9 OL;L;2021.2;73
 r1
 !s85 0
 31
@@ -43,20 +90,20 @@ r1
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv|
 !i113 0
 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R0
+R1
 vsystem_reset_controller_tb
 !s110 1649944119
 !i10b 1
 !s100 O;m:??:SfWF3Dc]Sfj3QE2
 IR`=Xk`e]iBkOLIRfRFB:n2
-R1
+R5
 w1649875923
 8C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v
 FC:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v
 !i122 1
 L0 1 28
-R2
-R3
+R4
+R9
 r1
 !s85 0
 31
@@ -65,4 +112,4 @@ r1
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller_tb.v|
 !i113 0
 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R0
+R1

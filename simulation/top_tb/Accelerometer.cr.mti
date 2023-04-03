@@ -1,1 +1,10 @@
+C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v {0 {vlog -work work -stats=none C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Accerleromter
+** Error: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v(54): (vlog-2730) Undefined variable: 'DBG_STATE'.
+** Error (suppressible): C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v(64): (vlog-2388) 'DBG_STATE' already declared in this scope (Accerleromter) at C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v(54).
+** Error: (vlog-13069) C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v(130): near "=": syntax error, unexpected '=', expecting ++ or --.
+** Error: (vlog-13069) C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v(133): near "end": syntax error, unexpected end, expecting ';'.
+** Error: (vlog-13069) C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v(137): near "end": syntax error, unexpected end.
 
+} {4.0 5.0 6.0 9.0} {}}

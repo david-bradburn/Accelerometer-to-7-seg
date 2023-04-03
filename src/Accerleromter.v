@@ -126,6 +126,10 @@ module Accerleromter(
 		if(rst) begin
 			refresh_rate_counter <= 0;
 			refresh_pulse <= 1'b0;
+		end
+		if(refresh_rate_counter == `REFRESH_RATE) begin
+			refresh_pulse <= 1'b1;
+			refresh_rate_counter <= 0;
 		end else begin
 			refresh_pulse <= 1'b0;
 			if(refresh_rate_counter = `REFRESH_RATE - 1) begin
