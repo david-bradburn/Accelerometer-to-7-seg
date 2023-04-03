@@ -64,8 +64,7 @@ module Accerleromter(
 	reg  [7:0] write_data;
 	wire [7:0] read_data;
 
-	typedef enum {}
-	wire [7:0] DBG_STATE;
+	i2c_state_e DBG_STATE;
 	wire [7:0] DBG_VALS;
 	reg  start_i2c_comms;
 	wire i2c_comms_finished;
@@ -81,27 +80,27 @@ module Accerleromter(
 		.SYS_CLK_SPEED (50000000),
 		.I2C_CLK_SPEED (100000) //100000
 	) G_SENSOR_i2c (
-		.clk (MAX10_CLK1_50),
-		.rst (rst),
+		.clk                (MAX10_CLK1_50),
+		.rst                (rst),
+      
+		.GSENSOR_CS_N       (GSENSOR_CS_N),
+		.GSENSOR_INT        (GSENSOR_INT),
+		.GSENSOR_SCL        (GSENSOR_SCLK),
+		.GSENSOR_SDA        (GSENSOR_SDI),
+		.ALT_ADDRESS        (GSENSOR_SDO),
+      
+		.DEV_ADDR           (7'h1D), //Fixed for now as there is only one device
+		.REG_ADDR           (register_address),
+		.R_W                (R_W),
+		.WRITE_DATA         (write_data),
+		.READ_DATA          (read_data),
+		      
+		.DBG_STATE          (DBG_STATE),
+		.DBG_VALS           (DBG_VALS),
 
-		.GSENSOR_CS_N (GSENSOR_CS_N),
-		.GSENSOR_INT  (GSENSOR_INT),
-		.GSENSOR_SCL  (GSENSOR_SCLK),
-		.GSENSOR_SDA  (GSENSOR_SDI),
-		.ALT_ADDRESS  (GSENSOR_SDO),
-
-		.DEV_ADDR (7'h1D), //Fixed for now as there is only one device
-		.REG_ADDR (register_address),
-		.R_W      (R_W),
-		.WRITE_DATA (write_data),
-		.READ_DATA  (read_data),
-		
-		.DBG_STATE(DBG_STATE),
-		.DBG_VALS(DBG_VALS),
-
-		.start_i2c_comms (start_i2c_comms),
+		.start_i2c_comms    (start_i2c_comms),
 		.i2c_comms_finished (i2c_comms_finished),
-		.ready (ready)
+		.ready              (ready)
 	);
 
 	reg data_read = 1'b0;

@@ -20,7 +20,7 @@ module i2c_controller_tb;
   reg  R_W = 0;
   reg [7:0] WRITE_DATA;
   wire [7:0] READ_DATA;
-  wire [7:0] DBG_STATE;
+  i2c_state_e DBG_STATE;
   wire [7:0] DBG_VALS;
   reg  start_i2c_comms = 0;
   wire i2c_comms_finished;
