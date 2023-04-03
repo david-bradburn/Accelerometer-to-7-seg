@@ -1,5 +1,6 @@
 
 `default_nettype wire
+`include types.svh
 
 //NEED TO ADD CLOCKSPEED PARAMETER
 module i2c_controller #(
@@ -23,7 +24,7 @@ module i2c_controller #(
 	input wire [7:0] WRITE_DATA,
 	output reg [7:0] READ_DATA,
 
-   output wire [7:0] DBG_STATE,
+   output i2c_state_e DBG_STATE,
    output wire [7:0] DBG_VALS,
 
 	input wire start_i2c_comms,
@@ -103,25 +104,25 @@ assign GSENSOR_SDA = sda_o;
 assign DBG_VALS = {5'b0, scl_oe, sda_oe, sda_o};
 
 
-`define IDLE 0
-`define START 1
-`define SEND_DEVICE_ADDRESS 2
-`define DEV_ADDRESS_ACK 3
-`define SEND_REGISTER_ADDRESS 4
-`define REG_ADDRESS_ACK 5
-`define SEND_WRITE_DATA 6
-`define RESTART 7
-`define SEND_DEVICE_ADDRESS_AGAIN 8
-`define DEV_ADDRESS_ACK_AGAIN 9
-`define RECEIVE_READ_DATA 10
-`define SEND_NACK 11
-`define STOP 12
+// `define IDLE 0
+// `define START 1
+// `define SEND_DEVICE_ADDRESS 2
+// `define DEV_ADDRESS_ACK 3
+// `define SEND_REGISTER_ADDRESS 4
+// `define REG_ADDRESS_ACK 5
+// `define SEND_WRITE_DATA 6
+// `define RESTART 7
+// `define SEND_DEVICE_ADDRESS_AGAIN 8
+// `define DEV_ADDRESS_ACK_AGAIN 9
+// `define RECEIVE_READ_DATA 10
+// `define SEND_NACK 11
+// `define STOP 12
 
-`define ERROR 255
+// `define ERROR 255
 
 
-reg [7:0] state = `IDLE;
-reg [7:0] next_state = `IDLE;
+i2c_state_e state = IDLE;
+i2c_state_e next_state = IDLE;
 
 
 
@@ -135,16 +136,16 @@ always @(posedge clk) begin //next_state always loop
       i2c_comms_finished <= 1'b0;   
    end else begin
       case(state)
-         `IDLE: begin
+         IDLE: begin
             if(start_i2c_comms) begin
-               next_state <= `START;
+               next_state <= START;
                i2c_comms_finished <= 1'b0;
             end else begin
                sda_oe <= 1'b0;
             end
          end
 
-         `START: begin
+         START: begin
             if(scl_1qtr) begin
                sda_oe <= 1'b1;
                sda_i <= 1'b0;
@@ -152,24 +153,24 @@ always @(posedge clk) begin //next_state always loop
             end
 
             if(scl_3qtr) begin
-               next_state <= `SEND_DEVICE_ADDRESS;
+               next_state <= SEND_DEVICE_ADDRESS;
                //reg_counter <= 7;
             end
          end
 
-         `SEND_DEVICE_ADDRESS: begin
+         SEND_DEVICE_ADDRESS: begin
             if(reg_counter > 0) sda_i <= DEV_ADDR[reg_counter-1];
             if(reg_counter == 0) sda_i <= 0;
             if(scl_3qtr) reg_counter <= reg_counter - 1;
 
             if((reg_counter == 8'hff)) begin
-               next_state <= `DEV_ADDRESS_ACK;
+               next_state <= DEV_ADDRESS_ACK;
                sda_oe <= 1'b0;
                // reg_counter <= 7;
             end
          end
 
-         `DEV_ADDRESS_ACK: begin
+         DEV_ADDRESS_ACK: begin
             if(scl_start) begin
                past_ack <= GSENSOR_SDA;
             end
@@ -177,27 +178,27 @@ always @(posedge clk) begin //next_state always loop
             if(scl_3qtr) begin
                if(~past_ack) begin
                   past_ack <= 1'b1;
-                  next_state <= `SEND_REGISTER_ADDRESS;
+                  next_state <= SEND_REGISTER_ADDRESS;
                   sda_i <= 1'b1;
                   sda_oe <= 1'b1;
                   reg_counter <= 7;
                end else begin
-                  next_state <= `ERROR;
+                  next_state <= ERROR;
                end
             end
          end
 
-         `SEND_REGISTER_ADDRESS: begin
+         SEND_REGISTER_ADDRESS: begin
             if(reg_counter >= 0) sda_i <= REG_ADDR[reg_counter];
             if(scl_3qtr) reg_counter <= reg_counter - 1;
 
             if((reg_counter == 8'hff)) begin
-               next_state <= `REG_ADDRESS_ACK;
+               next_state <= REG_ADDRESS_ACK;
                sda_oe <= 1'b0;
             end
          end
 
-         `REG_ADDRESS_ACK: begin
+         REG_ADDRESS_ACK: begin
             if(scl_start) begin
                past_ack <= GSENSOR_SDA;
             end
@@ -205,9 +206,9 @@ always @(posedge clk) begin //next_state always loop
                if(~past_ack) begin
                   past_ack <= 1'b1;
                   if(R_W) begin 
-                     next_state <= `RESTART;
+                     next_state <= RESTART;
                   end else begin
-                     next_state <=  `SEND_WRITE_DATA;
+                     next_state <=  SEND_WRITE_DATA;
                      sda_i <= 1'b1;
                      sda_oe <= 1'b1;
                      reg_counter <= 7;
@@ -219,7 +220,7 @@ always @(posedge clk) begin //next_state always loop
             end
          end
 
-         `RESTART: begin
+         RESTART: begin
             if(scl_1qtr) begin
                sda_oe <= 1'b1;
                sda_i <= 1'b0;
@@ -227,24 +228,24 @@ always @(posedge clk) begin //next_state always loop
             end
 
             if(scl_3qtr) begin
-               next_state <= `SEND_DEVICE_ADDRESS_AGAIN;
+               next_state <= SEND_DEVICE_ADDRESS_AGAIN;
                reg_counter <= 7;
             end
          end
 
-         `SEND_DEVICE_ADDRESS_AGAIN: begin
+         SEND_DEVICE_ADDRESS_AGAIN: begin
             if(reg_counter > 0) sda_i <= DEV_ADDR[reg_counter-1];
             if(reg_counter == 0) sda_i <= 1; //reading
             if(scl_3qtr) reg_counter <= reg_counter - 1;
 
             if((reg_counter == 8'hff)) begin
-               next_state <= `DEV_ADDRESS_ACK_AGAIN;
+               next_state <= DEV_ADDRESS_ACK_AGAIN;
                sda_oe <= 1'b0;
                // reg_counter <= 7;
             end
          end
 
-         `DEV_ADDRESS_ACK_AGAIN: begin
+         DEV_ADDRESS_ACK_AGAIN: begin
             if(scl_start) begin
                past_ack <= GSENSOR_SDA;
             end
@@ -252,17 +253,17 @@ always @(posedge clk) begin //next_state always loop
             if(scl_3qtr) begin
                if(~past_ack) begin
                   past_ack <= 1'b1;
-                  next_state <= `RECEIVE_READ_DATA;
+                  next_state <= RECEIVE_READ_DATA;
                   sda_i <= 1'b0;
                   sda_oe <= 1'b0;
                   reg_counter <= 7;
                end else begin
-                  next_state <= `ERROR;
+                  next_state <= ERROR;
                end
             end
          end
 
-         `RECEIVE_READ_DATA: begin
+         RECEIVE_READ_DATA: begin
             if(scl_start) begin
                READ_DATA[reg_counter] <= GSENSOR_SDA;
             end
@@ -271,14 +272,14 @@ always @(posedge clk) begin //next_state always loop
             end
 
             if((reg_counter == 8'hff)) begin
-               next_state <= `SEND_NACK;
+               next_state <= SEND_NACK;
                sda_oe <= 1'b1;
                sda_i <= 1'b1;
                reg_counter <= 7;
             end
          end
 
-         `SEND_NACK: begin
+         SEND_NACK: begin
             if(scl_start & GSENSOR_SDA) begin
                nack_sent <= 1'b1;
             end
@@ -286,24 +287,24 @@ always @(posedge clk) begin //next_state always loop
             if(scl_3qtr & nack_sent) begin
                sda_oe <= 1'b1;
                nack_sent <= 1'b0;
-               next_state <= `STOP;
+               next_state <= STOP;
                sda_i <= 1'b0;
             end
          end
 
-         `STOP: begin
+         STOP: begin
             if(scl_1qtr) begin
                sda_oe <= 1'b1;
                sda_i <= 1'b1;
-               next_state <= `IDLE;
+               next_state <= IDLE;
                i2c_comms_finished <= 1'b1;
             end
          end
 
          default: begin
-            if(state == `IDLE) next_state <= `IDLE;
-            if(state == `ERROR) next_state <= `ERROR;
-            next_state <= `ERROR;
+            if(state == IDLE) next_state <= IDLE;
+            if(state == ERROR) next_state <= ERROR;
+            next_state <= ERROR;
          end
       endcase
    end
@@ -317,7 +318,7 @@ end
 
 
 always @(posedge clk) begin
-   if (state != `IDLE | state != `ERROR) begin
+   if (state != IDLE | state != ERROR) begin
       scl_oe <= 1'b1;
       if (clk_count < (SCL_CLK_COUNT/2)) begin
          scl_i <= 1'b1;
