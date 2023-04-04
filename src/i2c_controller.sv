@@ -3,10 +3,12 @@
 `include "types.svh"
 
 //TODO at somepoint
+// - Implement writing lol
 // - Clock streching
 // - More debug
 // - Burst reads?
 // - Write this to be more general i2c module
+
 
 //NEED TO ADD CLOCKSPEED PARAMETER
 module i2c_controller #(
@@ -18,24 +20,24 @@ module i2c_controller #(
 	input  wire clk,
 	input  wire rst,
 
-	output wire       GSENSOR_CS_N, //tied to high
-	input  wire [2:1] GSENSOR_INT,  //this can just be ignored
-	output wire       GSENSOR_SCL,
-	inout  wire       GSENSOR_SDA,
-	inout  wire       ALT_ADDRESS,  //tied to 0
+	output wire        GSENSOR_CS_N, //tied to high
+	input  wire [1:0]  GSENSOR_INT,  //this can just be ignored, might be an issue in cobnstraints
+	output wire        GSENSOR_SCL,
+	inout  wire        GSENSOR_SDA,
+	inout  wire        ALT_ADDRESS,  //tied to 0
 
-	input wire [6:0] DEV_ADDR, // 0x1D - for accelerometer
-	input wire [7:0] REG_ADDR,
-	input wire       R_W,
-	input wire [7:0] WRITE_DATA,
-	output reg [7:0] READ_DATA,
+	input wire [6:0]   DEV_ADDR, // 0x1D - for accelerometer
+	input wire [7:0]   REG_ADDR,
+	input wire         R_W,
+	input wire [7:0]   WRITE_DATA,
+	output reg [7:0]   READ_DATA,
 
    output i2c_state_e DBG_STATE,
-   output wire [7:0] DBG_VALS,
+   output wire [7:0]  DBG_VALS,
 
-	input wire start_i2c_comms,
-	output reg i2c_comms_finished,
-   output reg ready
+	input wire         start_i2c_comms,
+	output reg         i2c_comms_finished,
+   output reg         ready
 
 );
 
@@ -69,6 +71,7 @@ wire scl_3qtr;
 
 reg nack_sent = 0;
 
+wire scl_start;
 assign scl_start = (clk_count == 0)   ?  1 : 0;
 assign scl_1qtr  = (clk_count == SCL_CLK_COUNT/4)   ?  1 : 0;
 assign scl_2qtr  = (clk_count == SCL_CLK_COUNT/2)   ?  1 : 0;
@@ -308,7 +311,7 @@ always @(posedge clk) begin //next_state always loop
          end
 
          default: begin
-            if(state == IDLE) next_state <= IDLE;
+            if(state == IDLE) next_state <= IDLE; // kinda obsolete;?
             if(state == ERROR) next_state <= ERROR;
             next_state <= ERROR;
          end

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="i2c_controller_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_i2c_controller_sv " />
+            <top_module name="glbl" />
+            <top_module name="i2c_controller_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="262.843334 us"></ZoomStartTime>
+      <ZoomEndTime time="980.843335 us"></ZoomEndTime>
+      <Cursor1Time time="382.510000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="177"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wave_markers>
+      <marker time="180010000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/i2c_controller_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/GSENSOR_CS_N" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_CS_N</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_CS_N</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/GSENSOR_INT" type="array">
+      <obj_property name="ElementShortName">GSENSOR_INT[1:0]</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_INT[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/GSENSOR_SCL" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_SCL</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_SCL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/GSENSOR_SDA" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_SDA</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_SDA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/ALT_ADDRESS" type="logic">
+      <obj_property name="ElementShortName">ALT_ADDRESS</obj_property>
+      <obj_property name="ObjectShortName">ALT_ADDRESS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/DEV_ADDR" type="array">
+      <obj_property name="ElementShortName">DEV_ADDR[6:0]</obj_property>
+      <obj_property name="ObjectShortName">DEV_ADDR[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/REG_ADDR" type="array">
+      <obj_property name="ElementShortName">REG_ADDR[7:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_ADDR[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/R_W" type="logic">
+      <obj_property name="ElementShortName">R_W</obj_property>
+      <obj_property name="ObjectShortName">R_W</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/WRITE_DATA" type="array">
+      <obj_property name="ElementShortName">WRITE_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">WRITE_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/READ_DATA" type="array">
+      <obj_property name="ElementShortName">READ_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">READ_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/DBG_STATE" type="array">
+      <obj_property name="ElementShortName">DBG_STATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DBG_STATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/DBG_VALS" type="array">
+      <obj_property name="ElementShortName">DBG_VALS[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DBG_VALS[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/start_i2c_comms" type="logic">
+      <obj_property name="ElementShortName">start_i2c_comms</obj_property>
+      <obj_property name="ObjectShortName">start_i2c_comms</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_comms_finished" type="logic">
+      <obj_property name="ElementShortName">i2c_comms_finished</obj_property>
+      <obj_property name="ObjectShortName">i2c_comms_finished</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/I2C_CLK_SPEED" type="array">
+      <obj_property name="ElementShortName">I2C_CLK_SPEED[31:0]</obj_property>
+      <obj_property name="ObjectShortName">I2C_CLK_SPEED[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/SYS_CLK_SPEED" type="array">
+      <obj_property name="ElementShortName">SYS_CLK_SPEED[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SYS_CLK_SPEED[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/HALF_CLK_DELAY" type="array">
+      <obj_property name="ElementShortName">HALF_CLK_DELAY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HALF_CLK_DELAY[31:0]</obj_property>
+   </wvobject>
+</wave_config>

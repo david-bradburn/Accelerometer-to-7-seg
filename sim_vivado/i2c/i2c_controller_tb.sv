@@ -11,9 +11,9 @@ module i2c_controller_tb;
   reg  clk = 0;
   reg  rst = 0;
   wire  GSENSOR_CS_N;
-  reg [2:1] GSENSOR_INT;
-  wire  GSENSOR_SCL;
-  wire  GSENSOR_SDA;
+  reg [1:0] GSENSOR_INT; 
+  wire      GSENSOR_SCL;
+  wire      GSENSOR_SDA;
   wire  ALT_ADDRESS;
   reg [6:0] DEV_ADDR;
   reg [7:0] REG_ADDR;
@@ -54,22 +54,49 @@ module i2c_controller_tb;
     .ready  ( ready)
   );
 
+  logic GSENSOR_SDA_i;
+  logic GSENSOR_SDA_oe = 1'b0;
+  
+  assign GSENSOR_SDA = GSENSOR_SDA_oe ? GSENSOR_SDA_i : 1'bz;
+
   initial begin
     #100
     GSENSOR_INT <= 2'b0;
     DEV_ADDR <= 8'h1D;
     REG_ADDR <= 8'h0;
-    R_W <= 1'b0;
+    R_W <= 1'b1;
 
     #20
 
+    @(posedge clk);
     start_i2c_comms <= 1'b1;
-    #10
+    #20
     start_i2c_comms <= 1'b0;
 
-    #1000;
+    #87420;
+    GSENSOR_SDA_oe <= 1'b1;
+    GSENSOR_SDA_i <= 1'b0;
+    @(posedge GSENSOR_SCL);
+    GSENSOR_SDA_oe <= 1'b0;
 
-    // $finish()
+    #87540;
+    GSENSOR_SDA_oe <= 1'b1;
+    GSENSOR_SDA_i <= 1'b0;
+    @(posedge GSENSOR_SCL);
+    GSENSOR_SDA_oe <= 1'b0;
+    #97540;
+
+    GSENSOR_SDA_oe <= 1'b1;
+    GSENSOR_SDA_i <= 1'b0;
+    @(posedge GSENSOR_SCL);
+    GSENSOR_SDA_oe <= 1'b0;
+
+
+    $finish;
+  end
+
+  always @(posedge clk) begin
+    if(DBG_STATE == ERROR) $finish;
   end
 
   always begin
