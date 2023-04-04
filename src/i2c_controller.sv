@@ -26,7 +26,7 @@ module i2c_controller #(
 
 	input wire [6:0] DEV_ADDR, // 0x1D - for accelerometer
 	input wire [7:0] REG_ADDR,
-	input wire R_W,
+	input wire       R_W,
 	input wire [7:0] WRITE_DATA,
 	output reg [7:0] READ_DATA,
 
@@ -138,7 +138,7 @@ assign DBG_STATE = state;
 
 always @(posedge clk) begin //next_state always loop
    if(rst) begin
-      next_state <= `IDLE;
+      next_state <= IDLE;
       i2c_comms_finished <= 1'b0;   
    end else begin
       case(state)
@@ -221,7 +221,7 @@ always @(posedge clk) begin //next_state always loop
                   end 
 
                end else begin
-                  next_state <= `ERROR;
+                  next_state <= ERROR;
                end
             end
          end

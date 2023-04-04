@@ -21,7 +21,7 @@ module Accerleromter(
 	output		     [7:0]		HEX5,
 
 	//////////// KEY //////////
-	input 		     [1:0]		KEY,
+	input 		     [1:0]		KEY, // button
 
 	//////////// LED //////////
 	output		     [9:0]		LEDR,
