@@ -124,6 +124,17 @@ module Accerleromter(
 	end
 
 	`define REFRESH_RATE 50000000 // for 1 second
+
+	counter 
+	#(
+	  .max_count ( REFRESH_RATE )
+	)
+	refresh_timer (
+	  .clk       (MAX10_CLK1_50 ),
+	  .reset     (rst ),
+	  .enable    (enable ), // need to decide when I want to enable it?
+	  .pulse     ( pulse)
+	);
 	
 	
 
