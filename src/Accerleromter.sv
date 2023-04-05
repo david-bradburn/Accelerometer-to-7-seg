@@ -45,8 +45,10 @@ module Accerleromter(
 
 	wire rst;
 
+	// system reset controller
 	system_reset_controller #(
-		.NO_OF_CLK_CYCLES( 40 )
+		.NO_OF_CLK_CYCLES( 40 ),
+		.ACTIVE_HIGH (1)
 	) rst_controller (
 		.clk(MAX10_CLK1_50),
 		.reset( rst )
@@ -65,10 +67,10 @@ module Accerleromter(
 	wire [7:0] read_data;
 
 	i2c_state_e DBG_STATE;
-	wire [7:0] DBG_VALS;
-	reg  start_i2c_comms;
-	wire i2c_comms_finished;
-	wire ready;
+	wire [7:0]  DBG_VALS;
+	reg         start_i2c_comms;
+	wire        i2c_comms_finished;
+	wire        ready;
 	
 //	assign debugGPIO[35:0] = {36{1'b0}};
 	assign debugGPIO[1:0] = {GSENSOR_SCLK, GSENSOR_SDI};
@@ -104,7 +106,7 @@ module Accerleromter(
 	);
 
 	reg data_read = 1'b0;
-	reg refresh_pulse;
+
 	always @(posedge MAX10_CLK1_50) begin
 		if(rst) begin
 			register_address <= 8'h0;
@@ -122,27 +124,10 @@ module Accerleromter(
 	end
 
 	`define REFRESH_RATE 50000000 // for 1 second
-	reg [31:0] refresh_rate_counter;
+	
 	
 
-	always @(posedge MAX10_CLK1_50) begin
-		if(rst) begin
-			refresh_rate_counter <= 0;
-			refresh_pulse <= 1'b0;
-		end
-		if(refresh_rate_counter == `REFRESH_RATE) begin
-			refresh_pulse <= 1'b1;
-			refresh_rate_counter <= 0;
-		end else begin
-			refresh_pulse <= 1'b0;
-			if(refresh_rate_counter = `REFRESH_RATE - 1) begin
-				refresh_pulse <= 1'b1;
-				refresh_rate_counter <= 0
-			end else begin
-				refresh_rate_counter = refresh_rate_counter + 1;
-			end
-		end
-	end
+
 
 
 

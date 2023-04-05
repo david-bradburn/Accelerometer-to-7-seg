@@ -96,7 +96,10 @@ module i2c_controller_tb;
   end
 
   always @(posedge clk) begin
-    if(DBG_STATE == ERROR) $finish;
+    if(DBG_STATE == ERROR) begin
+      $display("Have entered error state");
+      $finish;
+    end
   end
 
   always begin
