@@ -4,6 +4,7 @@
 //=======================================================
 `include "types.svh"
 
+// Implement some form of prgram counter
 
 module Accerleromter(
 

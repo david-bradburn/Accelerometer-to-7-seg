@@ -8,8 +8,9 @@ module register_memory #(
     input wire reset,
     input wire [NO_OF_BITS - 1:0] reg_addr,
 
-    output reg [31:0] reg_data,
-    output reg [3:0] error_code
+    output reg [31:0]  reg_data,
+    output reg [3:0]   error_code
+    
 );
 
     //localparam NO_OF_BITS = $bits(MEMORY_SIZE);
@@ -21,6 +22,8 @@ module register_memory #(
     // 02 = Read
     ///////////////
     // 
+    // error code 4 bits
+    // 0 - invalid register address
 
     always_ff @(posedge clk or posedge reset) begin
         if(reset) begin
@@ -29,6 +32,12 @@ module register_memory #(
         end else begin
             case(reg_addr) 
                 8'h0 : reg_data <= 32'h0; //need to determine the split of this opcode etc
+
+                default : begin
+                    read_data <= 32'hx;
+                    error_code <= 4'h1;
+                end
+
             endcase //TO DO: Write a script to turn instructions into data in memory
         end
     end
