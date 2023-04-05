@@ -94,3 +94,5 @@ sim_vivado/counter/counter_tb/counter_tb.sim/sim_1/behav/xsim/xsim.dir/counter_t
 sim_vivado/counter/counter_tb/counter_tb.sim/sim_1/behav/xsim/xsim.dir/counter_tb_behav/xsim.dbg
 sim_vivado/counter/counter_tb/counter_tb.sim/sim_1/behav/xsim/xsim.dir/counter_tb_behav/xsim.mem
 sim_vivado/counter/counter_tb/counter_tb.sim/sim_1/behav/xsim/xsim.dir/counter_tb_behav/xsim.reloc
+sim_vivado/i2c/i2c_tb/vivado_pid18336.str
+*.jou

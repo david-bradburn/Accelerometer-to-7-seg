@@ -79,15 +79,13 @@ assign scl_3qtr  = (clk_count == 3*SCL_CLK_COUNT/4) ?  1 : 0;
 
 reg [7:0] reg_counter = 7;
 
-always @(posedge clk) begin
-	if(rst) begin
-		ready <= 1'b1;
-      // reg_counter <= 7;
-	end else begin
-		if(start_i2c_comms) ready <= 1'b0;
-		if(i2c_comms_finished) ready <= 1'b1;
-	end
-end
+// always @(posedge clk) begin
+// 	if(rst) begin
+// 	end else begin
+// 		if(start_i2c_comms) 
+// 		if(i2c_comms_finished) ready <= 1'b1;
+// 	end
+// end
 
 always @(*) begin
 	if (scl_oe) begin
@@ -137,7 +135,7 @@ i2c_state_e next_state = IDLE;
 
 reg past_ack = 1'b1;
 
-logic burst_write = 0
+logic burst_write = 0;
 
 assign DBG_STATE = state;
 
@@ -145,12 +143,14 @@ always @(posedge clk) begin //next_state always loop
    if(rst) begin
       next_state <= IDLE;
       i2c_comms_finished <= 1'b0;   
+      ready <= 1'b1;
    end else begin
       case(state)
          IDLE: begin
-            if(start_i2c_comms) begin
+            if(start_i2c_comms & ready) begin
                next_state <= START;
                i2c_comms_finished <= 1'b0;
+               ready <= 1'b0;
             end else begin
                sda_oe <= 1'b0;
             end
@@ -223,8 +223,7 @@ always @(posedge clk) begin //next_state always loop
                      sda_i <= 1'b1;
                      sda_oe <= 1'b1;
                      reg_counter <= 7;
-                  end 
-
+                  end
                end else begin
                   next_state <= ERROR;
                end
@@ -232,8 +231,8 @@ always @(posedge clk) begin //next_state always loop
          end
 
          SEND_WRITE_DATA: begin
-            if(reg_counter >= 0) sda_i <= write_data[reg_counter];
-            if(scl_3qtr) <= reg_counter - 1;
+            if(reg_counter >= 0) sda_i <= WRITE_DATA[reg_counter];
+            if(scl_3qtr) reg_counter <= reg_counter - 1;
 
             if((reg_counter == 8'hff)) begin
                next_state <= WRITE_DATA_ACK;
@@ -338,11 +337,12 @@ always @(posedge clk) begin //next_state always loop
          end
 
          STOP: begin
-            if(scl_1qtr) begin
+            if(scl_3qtr) begin
                sda_oe <= 1'b1;
                sda_i <= 1'b1;
                next_state <= IDLE;
                i2c_comms_finished <= 1'b1;
+               ready <= 1'b1;
             end
          end
 

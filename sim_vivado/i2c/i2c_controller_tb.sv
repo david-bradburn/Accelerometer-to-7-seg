@@ -9,7 +9,7 @@ module i2c_controller_tb;
   localparam  HALF_CLK_DELAY = 1000000000/(2*SYS_CLK_SPEED);
   // Ports
   reg  clk = 0;
-  reg  rst = 0;
+  reg  rst = 1;
   wire  GSENSOR_CS_N;
   reg [1:0] GSENSOR_INT; 
   wire      GSENSOR_SCL;
@@ -60,7 +60,10 @@ module i2c_controller_tb;
   assign GSENSOR_SDA = GSENSOR_SDA_oe ? GSENSOR_SDA_i : 1'bz;
 
   initial begin
-    #100
+    rst <= 1'b1;
+
+    #100;
+    rst <= 1'b0;
     GSENSOR_INT <= 2'b0;
     DEV_ADDR <= 8'h1D;
     REG_ADDR <= 8'h0;
@@ -73,26 +76,83 @@ module i2c_controller_tb;
     #20
     start_i2c_comms <= 1'b0;
 
+    //sending device addess
     #87420;
+    //sending device address ack
     GSENSOR_SDA_oe <= 1'b1;
     GSENSOR_SDA_i <= 1'b0;
     @(posedge GSENSOR_SCL);
     GSENSOR_SDA_oe <= 1'b0;
 
+    //sending register address
     #87540;
+    //sending register address ack
     GSENSOR_SDA_oe <= 1'b1;
     GSENSOR_SDA_i <= 1'b0;
     @(posedge GSENSOR_SCL);
     GSENSOR_SDA_oe <= 1'b0;
+
+    //restart
+    //sending device address
     #97540;
 
+    //sending device address ack
+    GSENSOR_SDA_oe <= 1'b1;
+    GSENSOR_SDA_i <= 1'b0;
+    @(posedge GSENSOR_SCL);
+    GSENSOR_SDA_oe <= 1'b0;
+    // Reading register data
+
+    #107520;
+    //just idle it
+    #1000;
+    //write time
+    REG_ADDR <= 8'hee;
+    WRITE_DATA <= 8'hAB;
+    R_W <= 1'b0;
+    #200
+
+    @(posedge clk);
+    start_i2c_comms <= 1'b1;
+    #20
+    start_i2c_comms <= 1'b0;
+        //sending device addess
+    #84880;
+    //sending device address ack
     GSENSOR_SDA_oe <= 1'b1;
     GSENSOR_SDA_i <= 1'b0;
     @(posedge GSENSOR_SCL);
     GSENSOR_SDA_oe <= 1'b0;
 
+    //sending register address
+    #87540;
+    //sending register address ack
+    GSENSOR_SDA_oe <= 1'b1;
+    GSENSOR_SDA_i <= 1'b0;
+    @(posedge GSENSOR_SCL);
+    GSENSOR_SDA_oe <= 1'b0;
+
+    @(posedge clk);
+    start_i2c_comms <= 1'b1;
+    #20
+    start_i2c_comms <= 1'b0;
+
+    //sending write data
+    #87520;
+    //sending ack
+    GSENSOR_SDA_oe <= 1'b1;
+    GSENSOR_SDA_i <= 1'b0;
+    @(posedge GSENSOR_SCL);
+    GSENSOR_SDA_oe <= 1'b0;
+
+    #1000;
+    @(posedge GSENSOR_SCL);
+    @(posedge GSENSOR_SCL);
+    #1000;
 
     $finish;
+
+    // $finish;
   end
 
   always @(posedge clk) begin
