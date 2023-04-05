@@ -1,2 +1,3 @@
 //instruction | Device Addres | Register Address | (Write Data)
-R 1D ??
+R 0 f0 x
+W 1D ab 32
