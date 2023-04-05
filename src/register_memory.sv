@@ -8,7 +8,7 @@ module register_memory #(
     input wire reset,
     input wire [NO_OF_BITS - 1:0] reg_addr,
 
-    output reg [31:0]  reg_data,
+    output reg [31:0]  read_data,
     output reg [3:0]   error_code
     
 );
@@ -18,8 +18,9 @@ module register_memory #(
     //data 32 bits
     // OP code
     // 00 = NOP
-    // 01 = Write
-    // 02 = Read
+    // 01 = I2C Read
+    // 02 = I2C Write
+    // 03 = ?
     ///////////////
     // 
     // error code 4 bits
@@ -27,11 +28,13 @@ module register_memory #(
 
     always_ff @(posedge clk or posedge reset) begin
         if(reset) begin
-            reg_data <= 32'b0;
+            read_data <= 32'h0;
             error_code <= 4'b0; //could be coded better
         end else begin
             case(reg_addr) 
-                8'h0 : reg_data <= 32'h0; //need to determine the split of this opcode etc
+                                    // op | dev | reg | data
+                8'h0: read_data <= 32'h0100f000
+                8'h1: read_data <= 32'h021dab32
 
                 default : begin
                     read_data <= 32'hx;

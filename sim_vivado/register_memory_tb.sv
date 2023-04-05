@@ -8,7 +8,7 @@ module register_memory_tb;
 reg clk = 0;
 reg reset;
 reg [7:0] reg_addr;
-wire [31:0] reg_data;
+wire [31:0] read_data;
 wire [3:0] error_code; 
 
 register_memory #(
@@ -17,7 +17,7 @@ register_memory #(
     .clk (clk),
     .reset(reset),
     .reg_addr(reg_addr),
-    .reg_data(reg_data),
+    .read_data(read_data),
     .error_code(error_code)
 );
 
