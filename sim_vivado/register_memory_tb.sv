@@ -22,6 +22,7 @@ register_memory #(
 );
 
 
+
 system_reset_controller #(
     .NO_OF_CLK_CYCLES( 20 )
 ) rst_controller (
