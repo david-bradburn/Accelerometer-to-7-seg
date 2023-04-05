@@ -12,13 +12,13 @@
 
 //NEED TO ADD CLOCKSPEED PARAMETER
 module i2c_controller #(
-	parameter SYS_CLK_SPEED = 50000000, //50 MHz
-	parameter I2C_CLK_SPEED = 100000 //100 kHz
+	parameter          SYS_CLK_SPEED = 50000000, //50 MHz
+	parameter          I2C_CLK_SPEED = 100000 //100 kHz
 )
 (
 
-	input  wire clk,
-	input  wire rst,
+	input  wire        clk,
+	input  wire        rst,
 
 	output wire        GSENSOR_CS_N, //tied to high
 	input  wire [1:0]  GSENSOR_INT,  //this can just be ignored, might be an issue in cobnstraints
@@ -79,13 +79,6 @@ assign scl_3qtr  = (clk_count == 3*SCL_CLK_COUNT/4) ?  1 : 0;
 
 reg [7:0] reg_counter = 7;
 
-// always @(posedge clk) begin
-// 	if(rst) begin
-// 	end else begin
-// 		if(start_i2c_comms) 
-// 		if(i2c_comms_finished) ready <= 1'b1;
-// 	end
-// end
 
 always @(*) begin
 	if (scl_oe) begin
@@ -110,22 +103,6 @@ assign GSENSOR_SDA = sda_o;
 
 assign DBG_VALS = {5'b0, scl_oe, sda_oe, sda_o};
 
-
-// `define IDLE 0
-// `define START 1
-// `define SEND_DEVICE_ADDRESS 2
-// `define DEV_ADDRESS_ACK 3
-// `define SEND_REGISTER_ADDRESS 4
-// `define REG_ADDRESS_ACK 5
-// `define SEND_WRITE_DATA 6
-// `define RESTART 7
-// `define SEND_DEVICE_ADDRESS_AGAIN 8
-// `define DEV_ADDRESS_ACK_AGAIN 9
-// `define RECEIVE_READ_DATA 10
-// `define SEND_NACK 11
-// `define STOP 12
-
-// `define ERROR 255
 
 
 i2c_state_e state = IDLE;
