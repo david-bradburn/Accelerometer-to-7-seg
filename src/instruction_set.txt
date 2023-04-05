@@ -1,1 +1,2 @@
+//instruction | Device Addres | Register Address | (Write Data)
 R 1D ??
