@@ -13,6 +13,8 @@
                 RECEIVE_READ_DATA = 10,
                 SEND_NACK = 11,
                 STOP = 12,
+
+                WRITE_DATA_ACK = 13,
                 ERROR = 255 } i2c_state_e; // might want to rename some of these state names cause they aren't great
     `define I2C_STATE
 `endif

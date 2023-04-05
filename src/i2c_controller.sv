@@ -137,6 +137,8 @@ i2c_state_e next_state = IDLE;
 
 reg past_ack = 1'b1;
 
+logic burst_write = 0
+
 assign DBG_STATE = state;
 
 always @(posedge clk) begin //next_state always loop
@@ -227,6 +229,40 @@ always @(posedge clk) begin //next_state always loop
                   next_state <= ERROR;
                end
             end
+         end
+
+         SEND_WRITE_DATA: begin
+            if(reg_counter >= 0) sda_i <= write_data[reg_counter];
+            if(scl_3qtr) <= reg_counter - 1;
+
+            if((reg_counter == 8'hff)) begin
+               next_state <= WRITE_DATA_ACK;
+               sda_oe <= 1'b0;
+            end
+         end
+
+         WRITE_DATA_ACK: begin
+            if(scl_start) begin
+               past_ack <= GSENSOR_SDA;
+            end
+            if (scl_3qtr) begin
+               if(~past_ack) begin
+                  past_ack <= 1'b1;
+                  if(burst_write) begin 
+                     next_state <= SEND_WRITE_DATA;
+                  end else begin
+                     next_state <= STOP;
+   
+                  end 
+                  sda_i <= 1'b1;
+                  sda_oe <= 1'b1;
+                  reg_counter <= 7;
+
+               end else begin
+                  next_state <= ERROR;
+               end
+            end
+
          end
 
          RESTART: begin
