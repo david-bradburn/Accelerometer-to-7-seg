@@ -72,6 +72,8 @@ module Accerleromter(
 	reg         start_i2c_comms;
 	wire        i2c_comms_finished;
 	wire        ready;
+
+	integer program_counter = 0;
 	
 //	assign debugGPIO[35:0] = {36{1'b0}};
 	assign debugGPIO[1:0] = {GSENSOR_SCLK, GSENSOR_SDI};
@@ -122,6 +124,21 @@ module Accerleromter(
 				start_i2c_comms <= 1'b0;
 			end
 		end
+	end
+
+	register_memory #(
+		.MEMORY_SIZE(255)
+	) instructions (
+		.clk        (clk),
+		.reset      (rst),
+		.reg_addr   (program_counter),
+		.read_data  (),
+		.error_code ()
+	);
+
+	always_comb begin
+		//add comb logic for read_data decoding
+
 	end
 
 	`define REFRESH_RATE 50000000 // for 1 second

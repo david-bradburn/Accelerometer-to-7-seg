@@ -32,12 +32,12 @@ module register_memory #(
             error_code <= 4'b0; //could be coded better
         end else begin
             case(reg_addr) 
-                                    // op | dev | reg | data
+                // op | dev | reg | data
                 8'h0: read_data <= 32'h0100f000
                 8'h1: read_data <= 32'h021dab32
 
                 default : begin
-                    read_data <= 32'hx;
+                    read_data <= 32'h0;
                     error_code <= 4'h1;
                 end
 
