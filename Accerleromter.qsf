@@ -6,7 +6,7 @@ set_global_assignment -name FAMILY "MAX 10 FPGA"
 set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY "Accerleromter"
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:24:30 OCTOBER 12,2021"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
@@ -264,8 +264,11 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name VERILOG_FILE src/i2c_controller.v
-set_global_assignment -name VERILOG_FILE src/Accerleromter.v
+set_global_assignment -name SOURCE_FILE src/types.svh
+set_global_assignment -name SYSTEMVERILOG_FILE src/system_reset_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/register_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/i2c_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/Accerleromter.sv
 set_global_assignment -name SDC_FILE Accerleromter.SDC
-set_global_assignment -name SYSTEMVERILOG_FILE system_reset_controller.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

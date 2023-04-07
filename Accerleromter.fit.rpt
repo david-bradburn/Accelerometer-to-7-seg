@@ -1,6 +1,6 @@
 Fitter report for Accerleromter
-Thu Oct 06 16:52:54 2022
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri Apr  7 14:46:21 2023
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
 ---------------------
@@ -48,7 +48,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2021  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -68,17 +68,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Oct 06 16:52:54 2022       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Fitter Status                      ; Successful - Fri Apr  7 14:46:21 2023       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Accerleromter                               ;
 ; Top-level Entity Name              ; Accerleromter                               ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 245 / 49,760 ( < 1 % )                      ;
-;     Total combinational functions  ; 242 / 49,760 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 107 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 107                                         ;
+; Total logic elements               ; 291 / 49,760 ( < 1 % )                      ;
+;     Total combinational functions  ; 290 / 49,760 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 127 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 127                                         ;
 ; Total pins                         ; 103 / 360 ( 29 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
@@ -151,15 +151,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
-; Maximum used               ; 6           ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.7%      ;
+;     Processor 2            ;   2.1%      ;
 +----------------------------+-------------+
 
 
@@ -181,8 +181,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 577 ) ; 0.00 % ( 0 / 577 )         ; 0.00 % ( 0 / 577 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 577 ) ; 0.00 % ( 0 / 577 )         ; 0.00 % ( 0 / 577 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 644 ) ; 0.00 % ( 0 / 644 )         ; 0.00 % ( 0 / 644 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 644 ) ; 0.00 % ( 0 / 644 )         ; 0.00 % ( 0 / 644 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -205,7 +205,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 561 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 628 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.pin.
+The pin-out file can be found in C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.pin.
 
 
 +----------------------------------------------------------------------+
@@ -221,26 +221,26 @@ The pin-out file can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lit
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 245 / 49,760 ( < 1 % ) ;
-;     -- Combinational with no register       ; 138                    ;
-;     -- Register only                        ; 3                      ;
-;     -- Combinational with a register        ; 104                    ;
+; Total logic elements                        ; 291 / 49,760 ( < 1 % ) ;
+;     -- Combinational with no register       ; 164                    ;
+;     -- Register only                        ; 1                      ;
+;     -- Combinational with a register        ; 126                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
 ;     -- 4 input functions                    ; 127                    ;
-;     -- 3 input functions                    ; 24                     ;
-;     -- <=2 input functions                  ; 91                     ;
-;     -- Register only                        ; 3                      ;
+;     -- 3 input functions                    ; 20                     ;
+;     -- <=2 input functions                  ; 143                    ;
+;     -- Register only                        ; 1                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 174                    ;
-;     -- arithmetic mode                      ; 68                     ;
+;     -- normal mode                          ; 191                    ;
+;     -- arithmetic mode                      ; 99                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 107 / 51,509 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 107 / 49,760 ( < 1 % ) ;
+; Total registers*                            ; 127 / 51,509 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 127 / 49,760 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 18 / 3,110 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 24 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 103 / 360 ( 29 % )     ;
 ;     -- Clock pins                           ; 2 / 8 ( 25 % )         ;
@@ -260,12 +260,12 @@ The pin-out file can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lit
 ; Remote update blocks                        ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%     ;
-; Peak interconnect usage (total/H/V)         ; 1.8% / 1.4% / 2.3%     ;
-; Maximum fan-out                             ; 107                    ;
-; Highest non-global fan-out                  ; 32                     ;
-; Total fan-out                               ; 1179                   ;
-; Average fan-out                             ; 2.04                   ;
+; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.2%     ;
+; Peak interconnect usage (total/H/V)         ; 2.1% / 1.6% / 2.8%     ;
+; Maximum fan-out                             ; 127                    ;
+; Highest non-global fan-out                  ; 43                     ;
+; Total fan-out                               ; 1342                   ;
+; Average fan-out                             ; 2.08                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -278,26 +278,26 @@ The pin-out file can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lit
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 245 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 138                   ; 0                              ;
-;     -- Register only                        ; 3                     ; 0                              ;
-;     -- Combinational with a register        ; 104                   ; 0                              ;
+; Total logic elements                        ; 291 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 164                   ; 0                              ;
+;     -- Register only                        ; 1                     ; 0                              ;
+;     -- Combinational with a register        ; 126                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
 ;     -- 4 input functions                    ; 127                   ; 0                              ;
-;     -- 3 input functions                    ; 24                    ; 0                              ;
-;     -- <=2 input functions                  ; 91                    ; 0                              ;
-;     -- Register only                        ; 3                     ; 0                              ;
+;     -- 3 input functions                    ; 20                    ; 0                              ;
+;     -- <=2 input functions                  ; 143                   ; 0                              ;
+;     -- Register only                        ; 1                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 174                   ; 0                              ;
-;     -- arithmetic mode                      ; 68                    ; 0                              ;
+;     -- normal mode                          ; 191                   ; 0                              ;
+;     -- arithmetic mode                      ; 99                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 107                   ; 0                              ;
-;     -- Dedicated logic registers            ; 107 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+; Total registers                             ; 127                   ; 0                              ;
+;     -- Dedicated logic registers            ; 127 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 18 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 24 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 103                   ; 0                              ;
@@ -315,8 +315,8 @@ The pin-out file can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lit
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1185                  ; 8                              ;
-;     -- Registered Connections               ; 402                   ; 0                              ;
+;     -- Total Connections                    ; 1348                  ; 8                              ;
+;     -- Registered Connections               ; 475                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 4                     ; 0                              ;
@@ -352,7 +352,7 @@ The pin-out file can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lit
 ; GSENSOR_INT[2] ; Y13   ; 4        ; 51           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 ; KEY[0]         ; B8    ; 7        ; 46           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3 V Schmitt Trigger ; --                        ; User                 ; 0         ;
 ; KEY[1]         ; A7    ; 7        ; 49           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3 V Schmitt Trigger ; --                        ; User                 ; 0         ;
-; MAX10_CLK1_50  ; P11   ; 3        ; 34           ; 0            ; 28           ; 107                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
+; MAX10_CLK1_50  ; P11   ; 3        ; 34           ; 0            ; 28           ; 127                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 +----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+-----------------------+---------------------------+----------------------+-----------+
 
 
@@ -1107,8 +1107,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------------------------+-------------------------+--------------+
 ; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                   ; Entity Name             ; Library Name ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------------------------+-------------------------+--------------+
-; |Accerleromter                              ; 245 (3)     ; 107 (2)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 103  ; 0            ; 138 (1)      ; 3 (0)             ; 104 (2)          ; 0          ; |Accerleromter                                        ; Accerleromter           ; work         ;
-;    |i2c_controller:G_SENSOR_i2c|            ; 197 (197)   ; 73 (73)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 124 (124)    ; 3 (3)             ; 70 (70)          ; 0          ; |Accerleromter|i2c_controller:G_SENSOR_i2c            ; i2c_controller          ; work         ;
+; |Accerleromter                              ; 291 (4)     ; 127 (3)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 103  ; 0            ; 164 (1)      ; 1 (0)             ; 126 (2)          ; 0          ; |Accerleromter                                        ; Accerleromter           ; work         ;
+;    |counter:refresh_timer|                  ; 56 (56)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 1 (1)             ; 32 (32)          ; 0          ; |Accerleromter|counter:refresh_timer                  ; counter                 ; work         ;
+;    |i2c_controller:G_SENSOR_i2c|            ; 186 (186)   ; 58 (58)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 127 (127)    ; 0 (0)             ; 59 (59)          ; 0          ; |Accerleromter|i2c_controller:G_SENSOR_i2c            ; i2c_controller          ; work         ;
+;    |register_memory:instructions|           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0          ; |Accerleromter|register_memory:instructions           ; register_memory         ; work         ;
 ;    |system_reset_controller:rst_controller| ; 45 (45)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 32 (32)          ; 0          ; |Accerleromter|system_reset_controller:rst_controller ; system_reset_controller ; work         ;
 +---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1235,7 +1237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GSENSOR_INT[1]                                 ;                   ;         ;
 ; GSENSOR_INT[2]                                 ;                   ;         ;
 ; GSENSOR_SDI                                    ;                   ;         ;
-;      - i2c_controller:G_SENSOR_i2c|nack_sent~0 ; 0                 ; 6       ;
+;      - i2c_controller:G_SENSOR_i2c|nack_sent~1 ; 0                 ; 6       ;
 ;      - debugGPIO[0]~output                     ; 0                 ; 6       ;
 ; GSENSOR_SDO                                    ;                   ;         ;
 ; MAX10_CLK1_50                                  ;                   ;         ;
@@ -1247,12 +1249,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 ; Name                                               ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; MAX10_CLK1_50                                      ; PIN_P11            ; 107     ; Clock         ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-; i2c_controller:G_SENSOR_i2c|LessThan4~3            ; LCCOMB_X47_Y31_N18 ; 32      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; i2c_controller:G_SENSOR_i2c|reg_counter[2]~6       ; LCCOMB_X51_Y33_N16 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; i2c_controller:G_SENSOR_i2c|sda_oe                 ; FF_X50_Y33_N19     ; 5       ; Output enable ; no     ; --                   ; --               ; --                        ;
-; system_reset_controller:rst_controller|Equal0~10   ; LCCOMB_X51_Y36_N18 ; 23      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; system_reset_controller:rst_controller|LessThan0~1 ; LCCOMB_X51_Y36_N12 ; 31      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; MAX10_CLK1_50                                      ; PIN_P11            ; 127     ; Clock         ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; i2c_controller:G_SENSOR_i2c|LessThan4~4            ; LCCOMB_X46_Y43_N0  ; 32      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; i2c_controller:G_SENSOR_i2c|next_state~2           ; LCCOMB_X50_Y49_N2  ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; i2c_controller:G_SENSOR_i2c|reg_counter[4]~9       ; LCCOMB_X51_Y47_N16 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; i2c_controller:G_SENSOR_i2c|sda_oe                 ; FF_X50_Y47_N1      ; 9       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; system_reset_controller:rst_controller|Equal0~2    ; LCCOMB_X60_Y50_N18 ; 43      ; Async. clear  ; no     ; --                   ; --               ; --                        ;
+; system_reset_controller:rst_controller|LessThan0~9 ; LCCOMB_X60_Y50_N30 ; 31      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
 +----------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1261,7 +1264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name          ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; MAX10_CLK1_50 ; PIN_P11  ; 107     ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; MAX10_CLK1_50 ; PIN_P11  ; 127     ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
 +---------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1270,49 +1273,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 291 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 11 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 140 / 106,704 ( < 1 % ) ;
-; Direct links          ; 91 / 148,641 ( < 1 % )  ;
+; Block interconnects   ; 317 / 148,641 ( < 1 % ) ;
+; C16 interconnects     ; 4 / 5,382 ( < 1 % )     ;
+; C4 interconnects      ; 171 / 106,704 ( < 1 % ) ;
+; Direct links          ; 96 / 148,641 ( < 1 % )  ;
 ; Global clocks         ; 1 / 20 ( 5 % )          ;
-; Local interconnects   ; 183 / 49,760 ( < 1 % )  ;
+; Local interconnects   ; 207 / 49,760 ( < 1 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )         ;
-; R24 interconnects     ; 8 / 5,406 ( < 1 % )     ;
-; R4 interconnects      ; 112 / 147,764 ( < 1 % ) ;
+; R24 interconnects     ; 4 / 5,406 ( < 1 % )     ;
+; R4 interconnects      ; 119 / 147,764 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.61) ; Number of LABs  (Total = 18) ;
+; Number of Logic Elements  (Average = 12.13) ; Number of LABs  (Total = 24) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 0                            ;
+; 1                                           ; 2                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 2                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 2                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 0                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 2                            ;
-; 16                                          ; 12                           ;
+; 12                                          ; 1                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 15                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.17) ; Number of LABs  (Total = 18) ;
+; LAB-wide Signals  (Average = 1.17) ; Number of LABs  (Total = 24) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 15                           ;
-; 1 Clock enable                     ; 4                            ;
+; 1 Async. clear                     ; 4                            ;
+; 1 Clock                            ; 17                           ;
+; 1 Clock enable                     ; 5                            ;
 ; 1 Sync. clear                      ; 2                            ;
 +------------------------------------+------------------------------+
 
@@ -1320,12 +1324,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 19.50) ; Number of LABs  (Total = 18) ;
+; Number of Signals Sourced  (Average = 17.42) ; Number of LABs  (Total = 24) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
+; 1                                            ; 2                            ;
+; 2                                            ; 2                            ;
+; 3                                            ; 2                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
@@ -1333,23 +1337,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 1                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 2                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
 ; 20                                           ; 1                            ;
 ; 21                                           ; 2                            ;
-; 22                                           ; 1                            ;
+; 22                                           ; 2                            ;
 ; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 0                            ;
+; 27                                           ; 1                            ;
 ; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
@@ -1361,61 +1365,60 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.44) ; Number of LABs  (Total = 18) ;
+; Number of Signals Sourced Out  (Average = 7.83) ; Number of LABs  (Total = 24) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 0                            ;
+; 1                                               ; 3                            ;
+; 2                                               ; 3                            ;
+; 3                                               ; 2                            ;
 ; 4                                               ; 1                            ;
 ; 5                                               ; 1                            ;
-; 6                                               ; 4                            ;
-; 7                                               ; 2                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 1                            ;
 ; 8                                               ; 1                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 1                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 1                            ;
-; 13                                              ; 1                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 3                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 2                            ;
+; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
 ; 15                                              ; 0                            ;
-; 16                                              ; 3                            ;
+; 16                                              ; 5                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.06) ; Number of LABs  (Total = 18) ;
+; Number of Distinct Inputs  (Average = 11.33) ; Number of LABs  (Total = 24) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 3                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
+; 3                                            ; 4                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 1                            ;
 ; 8                                            ; 1                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
+; 10                                           ; 2                            ;
 ; 11                                           ; 0                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 1                            ;
 ; 16                                           ; 1                            ;
 ; 17                                           ; 1                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 0                            ;
-; 27                                           ; 2                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1626,7 +1629,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (119006): Selected device 10M50DAF484C7G for design "Accerleromter"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -1661,12 +1664,12 @@ Info (12825): nCSO dual-purpose pin not reserved
 Info (12825): DCLK dual-purpose pin not reserved
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (332104): Reading SDC File: 'Accerleromter.SDC'
-Warning (332174): Ignored filter at Accerleromter.sdc(9): ADC_CLK_10 could not be matched with a port File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.sdc Line: 9
-Warning (332049): Ignored create_clock at Accerleromter.sdc(9): Argument <targets> is an empty collection File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.sdc Line: 9
-    Info (332050): create_clock -period "10.0 MHz" [get_ports ADC_CLK_10] File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.sdc Line: 9
-Warning (332174): Ignored filter at Accerleromter.sdc(11): MAX10_CLK2_50 could not be matched with a port File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.sdc Line: 11
-Warning (332049): Ignored create_clock at Accerleromter.sdc(11): Argument <targets> is an empty collection File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.sdc Line: 11
-    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50] File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.sdc Line: 11
+Warning (332174): Ignored filter at Accerleromter.sdc(9): ADC_CLK_10 could not be matched with a port File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.sdc Line: 9
+Warning (332049): Ignored create_clock at Accerleromter.sdc(9): Argument <targets> is an empty collection File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.sdc Line: 9
+    Info (332050): create_clock -period "10.0 MHz" [get_ports ADC_CLK_10] File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.sdc Line: 9
+Warning (332174): Ignored filter at Accerleromter.sdc(11): MAX10_CLK2_50 could not be matched with a port File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.sdc Line: 11
+Warning (332049): Ignored create_clock at Accerleromter.sdc(11): Argument <targets> is an empty collection File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.sdc Line: 11
+    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50] File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.sdc Line: 11
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
@@ -1674,7 +1677,7 @@ Info (332111): Found 1 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   20.000 MAX10_CLK1_50
-Info (176353): Automatically promoted node MAX10_CLK1_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 10
+Info (176353): Automatically promoted node MAX10_CLK1_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 13
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1682,49 +1685,49 @@ Info (176235): Finished register packing
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "ADC_CLK_10" is assigned to location or region, but does not exist in design
     Warning (15706): Node "MAX10_CLK2_50" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X45_Y33 to location X55_Y43
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X45_Y44 to location X55_Y54
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.11 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.18 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 8 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 22
-    Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 22
-    Info (169178): Pin debugGPIO[2] uses I/O standard 3.3-V LVTTL at V9 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 28
-    Info (169178): Pin GSENSOR_INT[1] uses I/O standard 3.3-V LVTTL at Y14 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 32
-    Info (169178): Pin GSENSOR_INT[2] uses I/O standard 3.3-V LVTTL at Y13 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 32
-    Info (169178): Pin GSENSOR_SDI uses I/O standard 3.3-V LVTTL at V11 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 34
-    Info (169178): Pin GSENSOR_SDO uses I/O standard 3.3-V LVTTL at V12 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 36
-    Info (169178): Pin MAX10_CLK1_50 uses I/O standard 3.3-V LVTTL at P11 File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 10
+    Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 25
+    Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 25
+    Info (169178): Pin debugGPIO[2] uses I/O standard 3.3-V LVTTL at V9 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Info (169178): Pin GSENSOR_INT[1] uses I/O standard 3.3-V LVTTL at Y14 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 35
+    Info (169178): Pin GSENSOR_INT[2] uses I/O standard 3.3-V LVTTL at Y13 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 35
+    Info (169178): Pin GSENSOR_SDI uses I/O standard 3.3-V LVTTL at V11 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 37
+    Info (169178): Pin GSENSOR_SDO uses I/O standard 3.3-V LVTTL at V12 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 39
+    Info (169178): Pin MAX10_CLK1_50 uses I/O standard 3.3-V LVTTL at P11 File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 13
 Warning (169064): Following 1 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin GSENSOR_SDO has a permanently enabled output enable File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 36
-Info (144001): Generated suppressed messages file C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.fit.smsg
+    Info (169065): Pin GSENSOR_SDO has a permanently enabled output enable File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 39
+Info (144001): Generated suppressed messages file C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 5791 megabytes
-    Info: Processing ended: Thu Oct 06 16:52:54 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 5378 megabytes
+    Info: Processing ended: Fri Apr  7 14:46:21 2023
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.fit.smsg.
+The suppressed messages can be found in C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/Accerleromter.fit.smsg.
 
 

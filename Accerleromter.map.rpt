@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Accerleromter
-Thu Jan 19 15:22:18 2023
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fri Apr  7 14:45:58 2023
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
 ---------------------
@@ -10,15 +10,32 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: system_reset_controller:rst_controller
+ 14. Parameter Settings for User Entity Instance: i2c_controller:G_SENSOR_i2c
+ 15. Parameter Settings for User Entity Instance: register_memory:instructions
+ 16. Parameter Settings for User Entity Instance: counter:refresh_timer
+ 17. Port Connectivity Checks: "counter:refresh_timer"
+ 18. Port Connectivity Checks: "register_memory:instructions"
+ 19. Port Connectivity Checks: "i2c_controller:G_SENSOR_i2c"
+ 20. Port Connectivity Checks: "system_reset_controller:rst_controller"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2021  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,22 +55,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jan 19 15:22:18 2023           ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr  7 14:45:58 2023       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Accerleromter                               ;
 ; Top-level Entity Name              ; Accerleromter                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 296                                         ;
+;     Total combinational functions  ; 288                                         ;
+;     Dedicated logic registers      ; 127                                         ;
+; Total registers                    ; 127                                         ;
+; Total pins                         ; 103                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -148,15 +165,284 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; src/types.svh                    ; yes             ; User Unspecified File        ; C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/types.svh                  ;         ;
+; src/system_reset_controller.sv   ; yes             ; User SystemVerilog HDL File  ; C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/system_reset_controller.sv ;         ;
+; src/register_memory.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/register_memory.sv         ;         ;
+; src/i2c_controller.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv          ;         ;
+; src/counter.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/counter.sv                 ;         ;
+; src/Accerleromter.sv             ; yes             ; User SystemVerilog HDL File  ; C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv           ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 296                 ;
+;                                             ;                     ;
+; Total combinational functions               ; 288                 ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 127                 ;
+;     -- 3 input functions                    ; 20                  ;
+;     -- <=2 input functions                  ; 141                 ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 189                 ;
+;     -- arithmetic mode                      ; 99                  ;
+;                                             ;                     ;
+; Total registers                             ; 127                 ;
+;     -- Dedicated logic registers            ; 127                 ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 103                 ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 127                 ;
+; Total fan-out                               ; 1328                ;
+; Average fan-out                             ; 2.13                ;
++---------------------------------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                   ; Entity Name             ; Library Name ;
++---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-------------------------+--------------+
+; |Accerleromter                              ; 288 (2)             ; 127 (3)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 103  ; 0            ; 0          ; |Accerleromter                                        ; Accerleromter           ; work         ;
+;    |counter:refresh_timer|                  ; 55 (55)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Accerleromter|counter:refresh_timer                  ; counter                 ; work         ;
+;    |i2c_controller:G_SENSOR_i2c|            ; 186 (186)           ; 58 (58)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Accerleromter|i2c_controller:G_SENSOR_i2c            ; i2c_controller          ; work         ;
+;    |register_memory:instructions|           ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Accerleromter|register_memory:instructions           ; register_memory         ; work         ;
+;    |system_reset_controller:rst_controller| ; 45 (45)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Accerleromter|system_reset_controller:rst_controller ; system_reset_controller ; work         ;
++---------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                            ;
++------------------------------------------------------+--------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                     ;
++------------------------------------------------------+--------------------------------------------------------+
+; register_memory:instructions|read_data[0..11,25..31] ; Stuck at GND due to stuck port data_in                 ;
+; register_address[0,1]                                ; Stuck at GND due to stuck port data_in                 ;
+; write_data[0..7]                                     ; Stuck at GND due to stuck port data_in                 ;
+; register_address[2,3]                                ; Stuck at GND due to stuck port data_in                 ;
+; i2c_controller:G_SENSOR_i2c|state[5..7]              ; Merged with i2c_controller:G_SENSOR_i2c|state[4]       ;
+; i2c_controller:G_SENSOR_i2c|state[8,9,11..31]        ; Merged with i2c_controller:G_SENSOR_i2c|state[10]      ;
+; i2c_controller:G_SENSOR_i2c|next_state[5..7]         ; Merged with i2c_controller:G_SENSOR_i2c|next_state[4]  ;
+; i2c_controller:G_SENSOR_i2c|next_state[8,9,11..31]   ; Merged with i2c_controller:G_SENSOR_i2c|next_state[10] ;
+; register_address[5..7]                               ; Merged with register_address[4]                        ;
+; register_memory:instructions|read_data[13..15,24]    ; Merged with register_memory:instructions|read_data[12] ;
+; i2c_controller:G_SENSOR_i2c|scl_oe                   ; Stuck at VCC due to stuck port data_in                 ;
+; Total Number of Removed Registers = 91               ;                                                        ;
++------------------------------------------------------+--------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
++--------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; Register name                              ; Reason for Removal        ; Registers Removed due to This Register                                             ;
++--------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; register_memory:instructions|read_data[31] ; Stuck at GND              ; register_address[1], register_address[0], register_address[2], register_address[3] ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[7]  ; Stuck at GND              ; write_data[7]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[6]  ; Stuck at GND              ; write_data[6]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[5]  ; Stuck at GND              ; write_data[5]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[4]  ; Stuck at GND              ; write_data[4]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[3]  ; Stuck at GND              ; write_data[3]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[2]  ; Stuck at GND              ; write_data[2]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[1]  ; Stuck at GND              ; write_data[1]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
+; register_memory:instructions|read_data[0]  ; Stuck at GND              ; write_data[0]                                                                      ;
+;                                            ; due to stuck port data_in ;                                                                                    ;
++--------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 127   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 34    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 41    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; i2c_controller:G_SENSOR_i2c|past_ack       ; 8       ;
+; i2c_controller:G_SENSOR_i2c|reg_counter[2] ; 4       ;
+; i2c_controller:G_SENSOR_i2c|reg_counter[1] ; 3       ;
+; i2c_controller:G_SENSOR_i2c|reg_counter[0] ; 3       ;
+; Total number of inverted registers = 4     ;         ;
++--------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 17:1               ; 5 bits    ; 55 LEs        ; 5 LEs                ; 50 LEs                 ; Yes        ; |Accerleromter|i2c_controller:G_SENSOR_i2c|reg_counter[3] ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 3 LEs                ; 30 LEs                 ; Yes        ; |Accerleromter|i2c_controller:G_SENSOR_i2c|reg_counter[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: system_reset_controller:rst_controller ;
++------------------+-------+----------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                     ;
++------------------+-------+----------------------------------------------------------+
+; NO_OF_CLK_CYCLES ; 40    ; Signed Integer                                           ;
+; ACTIVE_HIGH      ; 1     ; Signed Integer                                           ;
++------------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i2c_controller:G_SENSOR_i2c ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; SYS_CLK_SPEED  ; 50000000 ; Signed Integer                               ;
+; I2C_CLK_SPEED  ; 100000   ; Signed Integer                               ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_memory:instructions ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; MEMORY_SIZE    ; 255   ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:refresh_timer ;
++----------------+----------+----------------------------------------+
+; Parameter Name ; Value    ; Type                                   ;
++----------------+----------+----------------------------------------+
+; max_count      ; 50000000 ; Signed Integer                         ;
++----------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "counter:refresh_timer" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; enable ; Input ; Info     ; Stuck at VCC          ;
++--------+-------+----------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_memory:instructions"                                                                    ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; reg_addr          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; read_data[23..16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; error_code        ; Output ; Info     ; Explicitly unconnected                                                              ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "i2c_controller:G_SENSOR_i2c"                                                                      ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; DEV_ADDR[4..2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; DEV_ADDR[6..5]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; DEV_ADDR[1]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; DEV_ADDR[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; READ_DATA          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; DBG_STATE[31..10]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; DBG_VALS[7..3]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; i2c_comms_finished ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "system_reset_controller:rst_controller"                                                                                                     ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; kick ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 103                         ;
+; cycloneiii_ff         ; 127                         ;
+;     CLR               ; 34                          ;
+;     ENA               ; 41                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 20                          ;
+; cycloneiii_io_obuf    ; 3                           ;
+; cycloneiii_lcell_comb ; 290                         ;
+;     arith             ; 99                          ;
+;         2 data inputs ; 98                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 191                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 127                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 5.19                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,33 +450,157 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Jan 19 15:22:11 2023
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Fri Apr  7 14:45:40 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Accerleromter -c Accerleromter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file src/i2c_controller.v
-    Info (12023): Found entity 1: i2c_controller File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file src/accerleromter.v
-    Info (12023): Found entity 1: Accerleromter File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file system_reset_controller.sv
-    Info (12023): Found entity 1: system_reset_controller File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/system_reset_controller.sv Line: 3
-Warning (10236): Verilog HDL Implicit Net warning at i2c_controller.v(65): created implicit net for "scl_start" File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/i2c_controller.v Line: 65
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/system_reset_controller.sv
+    Info (12023): Found entity 1: system_reset_controller File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/system_reset_controller.sv Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file src/register_memory.sv
+    Info (12023): Found entity 1: register_memory File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/register_memory.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/i2c_controller.sv
+    Info (12023): Found entity 1: i2c_controller File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file src/counter.sv
+    Info (12023): Found entity 1: counter File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/counter.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file src/accerleromter.sv
+    Info (12023): Found entity 1: Accerleromter File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 9
 Info (12127): Elaborating entity "Accerleromter" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Accerleromter.v(103): object "data_read" assigned a value but never read File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 103
-Error (10110): Verilog HDL error at Accerleromter.v(122): variable "refresh_rate_counter" has mixed blocking and nonblocking Procedural Assignments -- must be all blocking or all nonblocking assignments File: C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/src/Accerleromter.v Line: 122
-Error (12153): Can't elaborate top-level user hierarchy
-Info (144001): Generated suppressed messages file C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 3 warnings
-    Error: Peak virtual memory: 4702 megabytes
-    Error: Processing ended: Thu Jan 19 15:22:18 2023
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:16
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/david/OneDrive/Documents/FPGA/DE10-Lite/Projects/Accelerometer-to-7-seg/Accerleromter.map.smsg.
+Warning (10036): Verilog HDL or VHDL warning at Accerleromter.sv(69): object "device_address" assigned a value but never read File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 69
+Warning (10036): Verilog HDL or VHDL warning at Accerleromter.sv(112): object "data_read" assigned a value but never read File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 112
+Warning (10230): Verilog HDL assignment warning at Accerleromter.sv(59): truncated value with size 34 to match size of target (10) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 59
+Warning (10034): Output port "HEX0" at Accerleromter.sv(17) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+Warning (10034): Output port "HEX1" at Accerleromter.sv(18) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+Warning (10034): Output port "HEX2" at Accerleromter.sv(19) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+Warning (10034): Output port "HEX3" at Accerleromter.sv(20) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+Warning (10034): Output port "HEX4" at Accerleromter.sv(21) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+Warning (10034): Output port "HEX5" at Accerleromter.sv(22) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+Warning (10034): Output port "debugGPIO[35..5]" at Accerleromter.sv(31) has no driver File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+Info (12128): Elaborating entity "system_reset_controller" for hierarchy "system_reset_controller:rst_controller" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at system_reset_controller.sv(17): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/system_reset_controller.sv Line: 17
+Info (12128): Elaborating entity "i2c_controller" for hierarchy "i2c_controller:G_SENSOR_i2c" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 110
+Warning (10036): Verilog HDL or VHDL warning at i2c_controller.sv(64): object "transistion_state" assigned a value but never read File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 64
+Warning (10036): Verilog HDL or VHDL warning at i2c_controller.sv(69): object "scl_2qtr" assigned a value but never read File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 69
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(75): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 75
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(76): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 76
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(77): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 77
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(78): truncated value with size 32 to match size of target (1) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 78
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(152): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 152
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(181): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 181
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(212): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 212
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(260): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 260
+Warning (10230): Verilog HDL assignment warning at i2c_controller.sv(292): truncated value with size 32 to match size of target (8) File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 292
+Info (12128): Elaborating entity "register_memory" for hierarchy "register_memory:instructions" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 139
+Warning (10762): Verilog HDL Case Statement warning at register_memory.sv(35): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/register_memory.sv Line: 35
+Info (12128): Elaborating entity "counter" for hierarchy "counter:refresh_timer" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 175
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13032): The following tri-state nodes are fed by constants
+    Warning (13033): The pin "GSENSOR_SDO" is fed by VCC File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 39
+Warning (13044): Always-enabled tri-state buffer(s) removed
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "i2c_controller:G_SENSOR_i2c|GSENSOR_SCL" to the node "GSENSOR_SCLK" into a wire File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 25
+    Warning (13045): Converted the fanout from the always-enabled tri-state buffer "i2c_controller:G_SENSOR_i2c|GSENSOR_SCL" to the node "debugGPIO[1]" into a wire File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/i2c_controller.sv Line: 25
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GSENSOR_SDO~synth" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 39
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 17
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 18
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 19
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 20
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 21
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 22
+    Warning (13410): Pin "debugGPIO[4]" is stuck at VCC File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[5]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[6]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[7]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[8]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[9]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[10]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[11]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[12]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[13]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[14]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[15]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[16]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[17]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[18]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[19]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[20]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[21]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[22]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[23]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[24]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[25]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[26]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[27]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[28]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[29]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[30]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[31]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[32]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[33]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[34]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "debugGPIO[35]" is stuck at GND File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+    Warning (13410): Pin "GSENSOR_CS_N" is stuck at VCC File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 34
+Info (286030): Timing-Driven Synthesis is running
+Warning (14632): Output pin "debugGPIO[0]" driven by bidirectional pin "GSENSOR_SDI" cannot be tri-stated File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 31
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 25
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 25
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 35
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: C:/Users/david/OneDrive/Documents/GitHub/FPGA/Accelerometer-to-7-seg/src/Accerleromter.sv Line: 35
+Info (21057): Implemented 400 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 96 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 297 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 120 warnings
+    Info: Peak virtual memory: 4748 megabytes
+    Info: Processing ended: Fri Apr  7 14:45:58 2023
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:37
 
 

@@ -36,6 +36,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
 					"name" : "debugGPIO[0]",
 					"strict" : false
 				},
