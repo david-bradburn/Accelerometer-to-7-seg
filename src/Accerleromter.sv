@@ -113,9 +113,9 @@ module Accerleromter(
 
 	always @(posedge MAX10_CLK1_50) begin
 		if(rst) begin
-			register_address <= 8'h0;
-			R_W <= 1'b1;
-			write_data <= 8'h0;
+			// register_address <= 8'h0;
+			// R_W <= 1'b1;
+			// write_data <= 8'h0;
 			start_i2c_comms <= 1'b0;
 		end else begin
 			if(ready & refresh_pulse) begin
@@ -131,14 +131,14 @@ module Accerleromter(
 	register_memory #(
 		.MEMORY_SIZE(255)
 	) instructions (
-		.clk        (clk),
+		.clk        (MAX10_CLK1_50),
 		.reset      (rst),
 		.reg_addr   (program_counter),
 		.read_data  (instruction),
 		.error_code ()
 	);
 
-	always_comb begin
+	always @(posedge MAX10_CLK1_50) begin
 		//add comb logic for read_data decoding
 		case(instruction.op_code)
 			8'h00: begin // read
@@ -160,16 +160,18 @@ module Accerleromter(
 	end
 
 	`define REFRESH_RATE 50000000 // for 1 second
+	logic enable = 1;
+	logic refresh_pulse;
 
 	counter 
 	#(
-	  .max_count ( REFRESH_RATE )
+	  .max_count ( `REFRESH_RATE )
 	)
 	refresh_timer (
 	  .clk       (MAX10_CLK1_50 ),
 	  .reset     (rst ),
 	  .enable    (enable ), // need to decide when I want to enable it?
-	  .pulse     ( pulse)
+	  .pulse     (refresh_pulse)
 	);
 	
 	

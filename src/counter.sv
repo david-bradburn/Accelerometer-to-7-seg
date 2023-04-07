@@ -7,25 +7,27 @@ module counter #(
     input reset,
     input enable,
 
-    output pulse
+    output logic pulse
 );
 
 integer refresh_rate_counter;
-logic pulse;
+// logic pulse;
 
 
 always @(posedge clk or posedge reset) begin
-    if(reset | ~enable) begin
+    if(reset) begin
         refresh_rate_counter <= 0;
         pulse <= 1'b0;
     end
-    if(enable) begin
-        pulse <= 1'b0;
-        if(refresh_rate_counter == max_count - 1) begin
-            pulse <= 1'b1;
-            refresh_rate_counter <= 0;
-        end else begin
-            refresh_rate_counter <= refresh_rate_counter + 1;
+    else begin
+        if(enable) begin
+            pulse <= 1'b0;
+            if(refresh_rate_counter == max_count - 1) begin
+                pulse <= 1'b1;
+                refresh_rate_counter <= 0;
+            end else begin
+                refresh_rate_counter <= refresh_rate_counter + 1;
+            end
         end
     end
 end

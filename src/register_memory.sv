@@ -1,18 +1,18 @@
-`include "types.svh"
 
 module register_memory #(
-    parameter MEMORY_SIZE = 255,
-    localparam NO_OF_BITS = $bits(MEMORY_SIZE) 
+    parameter MEMORY_SIZE = 255
 )
 (
     input wire clk,
     input wire reset,
     input wire [NO_OF_BITS - 1:0] reg_addr,
 
-    output st_instructionData read_data,
+    output reg [31:0]  read_data,
     output reg [3:0]   error_code
     
 );
+
+    localparam NO_OF_BITS = $bits(MEMORY_SIZE);
 
     //localparam NO_OF_BITS = $bits(MEMORY_SIZE);
 
@@ -34,8 +34,8 @@ module register_memory #(
         end else begin
             case(reg_addr) 
                 // op | dev | reg | data
-                8'h0: read_data <= 32'h0100f000
-                8'h1: read_data <= 32'h021dab32
+                8'h0: read_data <= 32'h0100f000;
+                8'h1: read_data <= 32'h021dab32;
 
                 default : begin
                     read_data <= 32'h0;

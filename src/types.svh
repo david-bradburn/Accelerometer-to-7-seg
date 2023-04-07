@@ -1,5 +1,5 @@
 //Header file for types declarations
-`ifndef I2C_STATE
+`ifndef TYPES
     `define TYPES
     typedef enum { IDLE = 0, 
                 START = 1, 
