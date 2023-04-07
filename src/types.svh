@@ -1,5 +1,6 @@
 //Header file for types declarations
 `ifndef I2C_STATE
+    `define TYPES
     typedef enum { IDLE = 0, 
                 START = 1, 
                 SEND_DEVICE_ADDRESS = 2,
@@ -16,5 +17,14 @@
 
                 WRITE_DATA_ACK = 13,
                 ERROR = 255 } i2c_state_e; // might want to rename some of these state names cause they aren't great
-    `define I2C_STATE
+    
+
+    typedef struct packed {
+        logic [7:0] op_code;
+        logic [7:0] device_address; // but only 7 bits are used
+        logic [7:0] register_address;
+        logic [7:0] write_value;
+    } st_instructionData;
 `endif
+
+

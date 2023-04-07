@@ -1,3 +1,4 @@
+`include "types.svh"
 
 module register_memory #(
     parameter MEMORY_SIZE = 255,
@@ -8,7 +9,7 @@ module register_memory #(
     input wire reset,
     input wire [NO_OF_BITS - 1:0] reg_addr,
 
-    output reg [31:0]  read_data,
+    output st_instructionData read_data,
     output reg [3:0]   error_code
     
 );

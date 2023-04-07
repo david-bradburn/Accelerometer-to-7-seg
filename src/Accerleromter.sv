@@ -66,6 +66,7 @@ module Accerleromter(
 	reg        R_W;
 	reg  [7:0] write_data;
 	wire [7:0] read_data;
+	logic [7:0] device_address;
 
 	i2c_state_e DBG_STATE;
 	wire [7:0]  DBG_VALS;
@@ -126,18 +127,35 @@ module Accerleromter(
 		end
 	end
 
+	st_instructionData instruction;
 	register_memory #(
 		.MEMORY_SIZE(255)
 	) instructions (
 		.clk        (clk),
 		.reset      (rst),
 		.reg_addr   (program_counter),
-		.read_data  (),
+		.read_data  (instruction),
 		.error_code ()
 	);
 
 	always_comb begin
 		//add comb logic for read_data decoding
+		case(instruction.op_code)
+			8'h00: begin // read
+				device_address <= instruction.device_address;
+				register_address <= instruction.register_address;
+				R_W <= 1'b1;
+			end
+
+			8'h01: begin
+				device_address <= instruction.device_address;
+				register_address <= instruction.register_address;
+				R_W <= 1'b0;
+				write_data <= instruction.write_value;
+			end
+			
+
+		endcase
 
 	end
 
