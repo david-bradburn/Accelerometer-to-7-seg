@@ -7,12 +7,12 @@ module hex_driver_with_bcd (
     input  [19:0] number_in,
     input  update,
 
-    output HEX0,
-    output HEX1,
-    output HEX2,
-    output HEX2,
-    output HEX4,
-    output HEX5,
+    output dec_num_e HEX0,
+    output dec_num_e HEX1,
+    output dec_num_e HEX2,
+    output dec_num_e HEX2,
+    output dec_num_e HEX4,
+    output dec_num_e HEX5,
 
     output wire driver_ready
 );
