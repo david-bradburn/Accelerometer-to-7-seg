@@ -62,10 +62,10 @@ module Accerleromter(
 //  Structural coding
 //=======================================================
 
-	reg  [7:0] register_address;
-	reg        R_W;
-	reg  [7:0] write_data;
-	wire [7:0] read_data;
+	reg   [7:0] register_address;
+	reg         R_W;
+	reg   [7:0] write_data;
+	wire  [7:0] read_data;
 	logic [7:0] device_address;
 
 	i2c_state_e DBG_STATE;
@@ -74,7 +74,7 @@ module Accerleromter(
 	wire        i2c_comms_finished;
 	wire        ready;
 
-	integer program_counter = 0;
+	integer     program_counter = 0;
 	
 //	assign debugGPIO[35:0] = {36{1'b0}};
 	assign debugGPIO[1:0] = {GSENSOR_SCLK, GSENSOR_SDI};
@@ -113,21 +113,55 @@ module Accerleromter(
 
 	always @(posedge MAX10_CLK1_50) begin
 		if(rst) begin
-			// register_address <= 8'h0;
-			// R_W <= 1'b1;
-			// write_data <= 8'h0;
 			start_i2c_comms <= 1'b0;
 		end else begin
 			if(ready & refresh_pulse) begin
 				start_i2c_comms <= 1'b1;
-				
 			end else begin
 				start_i2c_comms <= 1'b0;
 			end
 		end
 	end
 
+
+// 	module hex_driver_with_bcd (
+//     input  clk,
+//     input  reset,
+
+//     input  [19:0] number_in,
+//     input  update,
+
+//     output dec_num_e HEX0,
+//     output dec_num_e HEX1,
+//     output dec_num_e HEX2,
+//     output dec_num_e HEX2,
+//     output dec_num_e HEX4,
+//     output dec_num_e HEX5,
+
+//     output wire driver_ready
+// );
+
+	logic driver_ready;
+
+	hex_driver_with_bcd hex_driver_with_bcd (
+		.clk   (clk),
+		.reset (rst),
+
+		.number_in (read_data),
+		.update    (refresh_pulse & driver_ready),
+
+		.HEX0      ( HEX0 ),
+		.HEX1      ( HEX1 ),
+		.HEX2      ( HEX2 ),
+		.HEX3      ( HEX3 ),
+		.HEX4      ( HEX4 ),
+		.HEX5      ( HEX5 ),
+
+		.driver_ready (driver_ready)
+	);
+
 	st_instructionData instruction;
+	
 	register_memory #(
 		.MEMORY_SIZE(255)
 	) instructions (

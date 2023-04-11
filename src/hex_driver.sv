@@ -66,23 +66,23 @@ localparam DECIMAL_DIGITS = 6;
  
     always @(posedge MAX10_CLK1_50) begin
         if (reset) begin
-            for (i = 0; i < 6; i = i + 1) begin	
+            for (i = 0; i < DECIMAL_DIGITS; i = i + 1) begin	
                 dec_seg_array[i] <= zero;
             end
         end else begin	
-            for (n = 0; n <= 5; n = n + 1) begin
+            for (n = 0; n < DECIMAL_DIGITS; n = n + 1) begin
                 case(dec_raw_array[n])
-                    0 : dec_seg_array[n] <=       zero;
-                    1 : dec_seg_array[n] <=        one;
-                    2 : dec_seg_array[n] <=        two;
-                    3 : dec_seg_array[n] <=      three;
-                    4 : dec_seg_array[n] <=       four;
-                    5 : dec_seg_array[n] <=       five;
-                    6 : dec_seg_array[n] <=        six;
-                    7 : dec_seg_array[n] <=      seven;
-                    8 : dec_seg_array[n] <=      eight;
-                    9 : dec_seg_array[n] <=       nine;
-                    default : dec_seg_array[n] <= zero;
+                    0 : dec_seg_array[n]       <=  zero;
+                    1 : dec_seg_array[n]       <=   one;
+                    2 : dec_seg_array[n]       <=   two;
+                    3 : dec_seg_array[n]       <= three;
+                    4 : dec_seg_array[n]       <=  four;
+                    5 : dec_seg_array[n]       <=  five;
+                    6 : dec_seg_array[n]       <=   six;
+                    7 : dec_seg_array[n]       <= seven;
+                    8 : dec_seg_array[n]       <= eight;
+                    9 : dec_seg_array[n]       <=  nine;
+                    default : dec_seg_array[n] <=  zero;
                 endcase
             end
         end  
