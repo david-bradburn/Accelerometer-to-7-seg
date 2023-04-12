@@ -124,22 +124,6 @@ module Accerleromter(
 	end
 
 
-// 	module hex_driver_with_bcd (
-//     input  clk,
-//     input  reset,
-
-//     input  [19:0] number_in,
-//     input  update,
-
-//     output dec_num_e HEX0,
-//     output dec_num_e HEX1,
-//     output dec_num_e HEX2,
-//     output dec_num_e HEX2,
-//     output dec_num_e HEX4,
-//     output dec_num_e HEX5,
-
-//     output wire driver_ready
-// );
 
 	logic driver_ready;
 
@@ -174,14 +158,14 @@ module Accerleromter(
 
 	always @(posedge MAX10_CLK1_50) begin
 		//add comb logic for read_data decoding
-		case(instruction.op_code)
-			8'h00: begin // read
+		case(instruction.op_code)// might encode instruction to not be i2c specific?
+			8'h00: begin // i2c read
 				device_address <= instruction.device_address;
 				register_address <= instruction.register_address;
 				R_W <= 1'b1;
 			end
 
-			8'h01: begin
+			8'h01: begin // i2c write
 				device_address <= instruction.device_address;
 				register_address <= instruction.register_address;
 				R_W <= 1'b0;
