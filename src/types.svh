@@ -25,6 +25,21 @@
         logic [7:0] register_address;
         logic [7:0] write_value;
     } st_instructionData;
+
+
+    typedef enum { 
+        zero  = 8'b11000000,
+        one   = 8'b11111001,
+        two   = 8'b10100100,
+        three = 8'b10110000,
+        four  = 8'b10011001,
+        five  = 8'b10010010,
+        six   = 8'b10000010,
+        seven = 8'b11111000,
+        eight = 8'b10000000,
+        nine  = 8'b10011000
+    } dec_num_e;
+
 `endif
 
 

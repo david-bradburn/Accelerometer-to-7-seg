@@ -1,5 +1,7 @@
 // need to simulate
 
+`include "types.svh"
+
 module hex_driver_with_bcd (
     input  clk,
     input  reset,
@@ -10,7 +12,7 @@ module hex_driver_with_bcd (
     output dec_num_e HEX0,
     output dec_num_e HEX1,
     output dec_num_e HEX2,
-    output dec_num_e HEX2,
+    output dec_num_e HEX3,
     output dec_num_e HEX4,
     output dec_num_e HEX5,
 
@@ -20,7 +22,8 @@ module hex_driver_with_bcd (
 localparam DECIMAL_DIGITS = 6;
 
 
-    logic []
+logic [DECIMAL_DIGITS*4 - 1:0] number_out;
+
    Binary_to_BCD # (
     .INPUT_WIDTH    (20),
     .DECIMAL_DIGITS (DECIMAL_DIGITS)
@@ -33,21 +36,8 @@ localparam DECIMAL_DIGITS = 6;
     .o_DV     ( driver_ready )
    );
 
-    typedef enum { 
-        zero  = 8'b11000000,
-        one   = 8'b11111001,
-        two   = 8'b10100100,
-        three = 8'b10110000,
-        four  = 8'b10011001,
-        five  = 8'b10010010,
-        six   = 8'b10000010,
-        seven = 8'b11111000,
-        eight = 8'b10000000,
-        nine  = 8'b10011000
-    } dec_num_e;
 
     dec_num_e dec_seg_array [0:5];
-    logic [DECIMAL_DIGITS*4 - 1:0] number_out;
     logic [3:0] dec_raw_array [0:5];
 
     assign HEX0 = dec_seg_array[0];
@@ -57,20 +47,22 @@ localparam DECIMAL_DIGITS = 6;
     assign HEX4 = dec_seg_array[4];
     assign HEX5 = dec_seg_array[5];
 
-    always_comb begin
-        for (n = 0; n < DECIMAL_DIGITS; n = n + 1) begin
-            dec_raw_array[n] <= number_out[4*n+3:4*n];
+    generate
+        always_comb begin
+            for (integer m = 0; m < DECIMAL_DIGITS; m = m + 1) begin
+                dec_raw_array[m][3:0] = number_out[4*m+3 -:4];
+            end
         end
-    end
+    endgenerate
 
  
-    always @(posedge MAX10_CLK1_50) begin
+    always @(posedge clk) begin
         if (reset) begin
-            for (i = 0; i < DECIMAL_DIGITS; i = i + 1) begin	
+            for (integer i = 0; i < DECIMAL_DIGITS; i = i + 1) begin	
                 dec_seg_array[i] <= zero;
             end
         end else begin	
-            for (n = 0; n < DECIMAL_DIGITS; n = n + 1) begin
+            for (integer n = 0; n < DECIMAL_DIGITS; n = n + 1) begin
                 case(dec_raw_array[n])
                     0 : dec_seg_array[n]       <=  zero;
                     1 : dec_seg_array[n]       <=   one;

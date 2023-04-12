@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="hex_driver_with_bcd_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_Binary_to_BCD_sv_541447296 " />
+            <top_module name="glbl" />
+            <top_module name="hex_driver_with_bcd_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.005000 us"></ZoomStartTime>
+      <ZoomEndTime time="13.045001 us"></ZoomEndTime>
+      <Cursor1Time time="5.815000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/hex_driver_with_bcd_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/number_in" type="array">
+      <obj_property name="ElementShortName">number_in[19:0]</obj_property>
+      <obj_property name="ObjectShortName">number_in[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/update" type="logic">
+      <obj_property name="ElementShortName">update</obj_property>
+      <obj_property name="ObjectShortName">update</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/HEX0" type="array">
+      <obj_property name="ElementShortName">HEX0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/HEX1" type="array">
+      <obj_property name="ElementShortName">HEX1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/HEX2" type="array">
+      <obj_property name="ElementShortName">HEX2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/HEX3" type="array">
+      <obj_property name="ElementShortName">HEX3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/HEX4" type="array">
+      <obj_property name="ElementShortName">HEX4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/HEX5" type="array">
+      <obj_property name="ElementShortName">HEX5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX5[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/driver_ready" type="logic">
+      <obj_property name="ElementShortName">driver_ready</obj_property>
+      <obj_property name="ObjectShortName">driver_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/hex_driver_with_bcd_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+</wave_config>
