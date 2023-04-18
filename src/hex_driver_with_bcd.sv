@@ -2,6 +2,10 @@
 
 `include "types.svh"
 
+//TODO
+// - Add control of hex vs decimal display
+// - 
+
 module hex_driver_with_bcd (
     input  clk,
     input  reset,
