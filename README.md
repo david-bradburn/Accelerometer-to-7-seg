@@ -2,7 +2,7 @@
 
 ## Description
 This project is to be implemented on a DE10-lite development board.
-It reads the accelerometer
+It reads the accelerometer data and displays it to a series of 7 segment displays
 
 
 
