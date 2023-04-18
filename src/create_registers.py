@@ -23,9 +23,9 @@ for data in clean_split_input:
 
     match instr:
         case 1:
-            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}{dev_add}{reg_add}00")
+            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}_{dev_add}_{reg_add}_00")
         case 2:
             write_data = f"{int(data[3], 16):#0{4}x}"[2:]
-            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}{dev_add}{reg_add}{write_data}")
+            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}_{dev_add}_{reg_add}_{write_data}")
 
     pc += 1

@@ -193,10 +193,4 @@ module Accerleromter(
 	);
 	
 	
-
-
-
-
-
-
 endmodule
