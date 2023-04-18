@@ -1,3 +1,5 @@
 //instruction | Device Addres | Register Address | (Write Data)
-R 1D f0 x
-W 1D ab 32
+R 1D 00 x  //Read device ID
+W 1D 2d 08 //Change mode on accelerometer to measure
+R 1D 32 x //Read x0
+R 1D 33 x //Read x1

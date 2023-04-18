@@ -34,8 +34,10 @@ module register_memory #(
         end else begin
             case(reg_addr) 
                 // op | dev | reg | data
-                8'h0: read_data <= 32'h01_00_f0_00;
-                8'h1: read_data <= 32'h02_1d_ab_32;
+                8'h0: read_data <= 32'h01_1d_00_00;
+                8'h1: read_data <= 32'h02_1d_2d_08;
+                8'h2: read_data <= 32'h01_1d_32_00;
+                8'h3: read_data <= 32'h01_1d_33_00;
 
                 default : begin
                     read_data <= 32'h0;

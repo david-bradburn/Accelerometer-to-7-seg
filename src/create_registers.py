@@ -1,9 +1,9 @@
-
+#Check this still works with comments, add comments into gen
 with open("./src/instruction_set.txt") as fd:
     raw_input = fd.readlines()
 
 input_no_header = raw_input[1:]
-clean_split_input = [i.strip("\n").split(" ") for i in input_no_header]
+clean_split_input = [i.strip("\n").split("//")[0].split(" ") for i in input_no_header]
 
 instr_dict = {"N": 0, "R": 1, "W": 2}
 
@@ -23,9 +23,9 @@ for data in clean_split_input:
 
     match instr:
         case 1:
-            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}_{dev_add}_{reg_add}_00")
+            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}_{dev_add}_{reg_add}_00;")
         case 2:
             write_data = f"{int(data[3], 16):#0{4}x}"[2:]
-            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}_{dev_add}_{reg_add}_{write_data}")
+            print(f"8'h{pc_hex_str}: read_data <= 32'h{instr_hex}_{dev_add}_{reg_add}_{write_data};")
 
     pc += 1
