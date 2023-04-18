@@ -6,7 +6,7 @@ It reads the accelerometer
 
 
 
-##TODO
+## TODO
 ### Updates
 1. Read me updates - can we put pictures in it?
 2. Simulate everything
