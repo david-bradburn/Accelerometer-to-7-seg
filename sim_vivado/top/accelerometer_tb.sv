@@ -39,9 +39,7 @@ module Accerleromter_tb;
   );
 
   initial begin
-    begin
-      $finish;
-    end
+    $finish();
   end
 
 
