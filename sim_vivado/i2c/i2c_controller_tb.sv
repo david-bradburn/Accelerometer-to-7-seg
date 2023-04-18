@@ -1,3 +1,5 @@
+// add assert statements
+ 
 
 `include "types.svh"
 
@@ -70,14 +72,26 @@ module i2c_controller_tb;
     R_W <= 1'b1;
 
     #20
+    assert(i2c_controller_dut.state == IDLE);
 
     @(posedge clk);
     start_i2c_comms <= 1'b1;
     #20
     start_i2c_comms <= 1'b0;
+    @(negedge GSENSOR_SCL);
+    assert(i2c_controller_dut.state == START);
+
+    // $display("egg");
+
+    @(posedge GSENSOR_SCL);
+    assert(i2c_controller.state == SEND_DEVICE_ADDRESS);
+    // $display("egg");
 
     //sending device addess
-    #87420;
+    #77520;
+    assert(i2c_controller_dut.state == DEV_ADDRESS_ACK);
+    // $display("egg");
+
     //sending device address ack
     GSENSOR_SDA_oe <= 1'b1;
     GSENSOR_SDA_i <= 1'b0;
