@@ -100,9 +100,11 @@ module i2c_controller_tb;
 
     //sending register address
     @(posedge GSENSOR_SCL);
-    assert(i2c_controller_dut.state == ?
-    )
-    #87540;
+    assert(i2c_controller_dut.state == SEND_REGISTER_ADDRESS);
+
+    for (integer i = 0; i < 7; i++) begin
+      @(posedge GSENSOR_SCL);
+    end
     //sending register address ack
     GSENSOR_SDA_oe <= 1'b1;
     GSENSOR_SDA_i <= 1'b0;

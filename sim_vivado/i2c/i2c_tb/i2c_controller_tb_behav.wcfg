@@ -12,17 +12,17 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="25.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="107.800001 us"></ZoomEndTime>
-      <Cursor1Time time="85.400000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="73.600001 us"></ZoomEndTime>
+      <Cursor1Time time="0.000000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="145"></NameColumnWidth>
+      <NameColumnWidth column_width="141"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="20" />
    <wave_markers>
-      <marker time="10010000" label="" />
+      <marker time="0" label="" />
    </wave_markers>
    <wvobject fp_name="/i2c_controller_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -47,6 +47,18 @@
    <wvobject fp_name="/i2c_controller_tb/GSENSOR_SDA" type="logic">
       <obj_property name="ElementShortName">GSENSOR_SDA</obj_property>
       <obj_property name="ObjectShortName">GSENSOR_SDA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/GSENSOR_SDA_oe" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_SDA_oe</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_SDA_oe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/sda_oe" type="logic">
+      <obj_property name="ElementShortName">sda_oe</obj_property>
+      <obj_property name="ObjectShortName">sda_oe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/sda_o" type="logic">
+      <obj_property name="ElementShortName">sda_o</obj_property>
+      <obj_property name="ObjectShortName">sda_o</obj_property>
    </wvobject>
    <wvobject fp_name="/i2c_controller_tb/ALT_ADDRESS" type="logic">
       <obj_property name="ElementShortName">ALT_ADDRESS</obj_property>
