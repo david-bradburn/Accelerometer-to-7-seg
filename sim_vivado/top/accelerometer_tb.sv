@@ -3,7 +3,7 @@ module Accerleromter_tb;
   // Parameters
 
   // Ports
-  reg MAX10_CLK1_50 = 0;
+  reg clk = 0;
   wire [7:0] HEX0;
   wire [7:0] HEX1;
   wire [7:0] HEX2;
@@ -21,7 +21,7 @@ module Accerleromter_tb;
 
   Accerleromter 
   Accerleromter_dut (
-    .MAX10_CLK1_50 (MAX10_CLK1_50 ),
+    .MAX10_CLK1_50 (clk ),
     .HEX0 (HEX0 ),
     .HEX1 (HEX1 ),
     .HEX2 (HEX2 ),
@@ -39,8 +39,16 @@ module Accerleromter_tb;
   );
 
   initial begin
+    #10;
+    @(negedge Accerleromter_dut.rst); //reset over
+    @(posedge Accerleromter_dut.refresh_pulse);
+    #10;
     $finish();
   end
+
+  always begin
+    #5 clk <= ~clk;
+  end 
 
 
 endmodule
