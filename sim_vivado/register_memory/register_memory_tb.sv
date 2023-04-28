@@ -31,7 +31,31 @@ system_reset_controller #(
 );
 
 initial begin
+    #5
+    @(negedge reset);
+    @(posedge clk);
 
+    reg_addr <= 0;
+    @(posedge clk);
+    assert(read_data == 32'h01_1d_00_00);
+
+    reg_addr <= 1;
+    @(posedge clk);
+    assert(read_data == 32'h02_1d_2d_08);
+
+    reg_addr <= 2;
+    @(posedge clk);
+    assert(read_data == 32'h01_1d_32_00);
+
+    reg_addr <= 3;
+    @(posedge clk);
+    assert(read_data == 32'h01_1d_33_00);
+
+    reg_addr <= 4;
+    @(posedge clk);
+    assert(read_data == 32'h0);
+
+    $finish();
 end
 
 always begin

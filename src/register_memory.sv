@@ -1,4 +1,6 @@
 
+//read only register
+
 module register_memory #(
     parameter MEMORY_SIZE = 255
 )
