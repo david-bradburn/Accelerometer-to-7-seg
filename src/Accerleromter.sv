@@ -9,34 +9,36 @@
 module Accerleromter(
 
 	//////////// CLOCK //////////
-	//input 		          		ADC_CLK_10,
-	input 		          		MAX10_CLK1_50,
-	//input 		          		MAX10_CLK2_50,
+	input MAX10_CLK1_50,
 
 	//////////// SEG7 //////////
-	output		     [7:0]		HEX0,
-	output		     [7:0]		HEX1,
-	output		     [7:0]		HEX2,
-	output		     [7:0]		HEX3,
-	output		     [7:0]		HEX4,
-	output		     [7:0]		HEX5,
+	output [7:0] HEX0,
+	output [7:0] HEX1,
+	output [7:0] HEX2,
+	output [7:0] HEX3,
+	output [7:0] HEX4,
+	output [7:0] HEX5,
 
 	//////////// KEY //////////
-	input 		     [1:0]		KEY, // button
+	input [1:0]	KEY, // button
 
 	//////////// LED //////////
-	output		     [9:0]		LEDR,
+	output [9:0] LEDR,
 	
 	//////////// GPIO //////////
-	output		     [35:0]		debugGPIO,
+	output [35:0] debugGPIO,
 	
 	//////////// Accelerometer //////////
-	output		          		GSENSOR_CS_N,
-	input 		     [2:1]		GSENSOR_INT,
-	output		          		GSENSOR_SCLK,
-	inout 		          		GSENSOR_SDI,
-	inout 		          		GSENSOR_SDO
+	output GSENSOR_CS_N,
+	input [2:1]	GSENSOR_INT,
+	output GSENSOR_SCLK,
+	inout GSENSOR_SDI,
+	inout GSENSOR_SDO
 );
+
+wire clk;
+
+assign clk = MAX10_CLK1_50;
 
 
 
@@ -51,7 +53,7 @@ module Accerleromter(
 		.NO_OF_CLK_CYCLES( 40 ),
 		.ACTIVE_HIGH (1)
 	) rst_controller (
-		.clk(MAX10_CLK1_50),
+		.clk(clk),
 		.reset( rst )
 	);
 
@@ -86,7 +88,7 @@ module Accerleromter(
 		.SYS_CLK_SPEED (50000000),
 		.I2C_CLK_SPEED (100000) //100000
 	) G_SENSOR_i2c (
-		.clk                (MAX10_CLK1_50),
+		.clk                (clk),
 		.rst                (rst),
       
 		.GSENSOR_CS_N       (GSENSOR_CS_N),
@@ -111,7 +113,7 @@ module Accerleromter(
 
 	reg data_read = 1'b0;
 
-	always @(posedge MAX10_CLK1_50) begin
+	always @(posedge clk) begin
 		if(rst) begin
 			start_i2c_comms <= 1'b0;
 		end else begin
@@ -149,14 +151,14 @@ module Accerleromter(
 	register_memory #(
 		.MEMORY_SIZE(255)
 	) instructions (
-		.clk        (MAX10_CLK1_50),
+		.clk        (clk),
 		.reset      (rst),
 		.reg_addr   (program_counter),
 		.read_data  (instruction),
 		.error_code ()
 	);
 
-	always @(posedge MAX10_CLK1_50) begin
+	always @(posedge clk) begin
 		//add comb logic for read_data decoding
 		case(instruction.op_code)// might encode instruction to not be i2c specific?
 			8'h00: begin // i2c read
@@ -186,7 +188,7 @@ module Accerleromter(
 	  .max_count ( `REFRESH_RATE )
 	)
 	refresh_timer (
-	  .clk       (MAX10_CLK1_50 ),
+	  .clk       (clk ),
 	  .reset     (rst ),
 	  .enable    (enable ), // need to decide when I want to enable it?
 	  .pulse     (refresh_pulse)
