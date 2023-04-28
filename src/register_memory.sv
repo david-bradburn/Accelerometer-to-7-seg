@@ -1,8 +1,9 @@
 
 //read only register
 
+
 module register_memory #(
-    parameter MEMORY_SIZE = 255
+    parameter NO_OF_BITS = 8
 )
 (
     input wire clk,
@@ -14,7 +15,7 @@ module register_memory #(
     
 );
 
-    localparam NO_OF_BITS = $bits(MEMORY_SIZE);
+    // localparam NO_OF_BITS = $bits(MEMORY_SIZE);
 
     //localparam NO_OF_BITS = $bits(MEMORY_SIZE);
 
@@ -28,6 +29,9 @@ module register_memory #(
     // 
     // error code 4 bits
     // 0 - invalid register address
+    // AS THIS IS SET ON A CLK EDGE AND NOT VIA COMB THERE IS NO GARUNTEE THAT THIS
+    // WILL GIVE BACK A READING ON THE RISING EDGE THAT THE DATA IS SET
+    // THIS IS A 2 CYCLE READ TIME
 
     always_ff @(posedge clk or posedge reset) begin
         if(reset) begin
@@ -36,10 +40,10 @@ module register_memory #(
         end else begin
             case(reg_addr) 
                 // op | dev | reg | data
-                8'h0: read_data <= 32'h01_1d_00_00; //Read device ID
-                8'h1: read_data <= 32'h02_1d_2d_08; //Change mode on accelerometer to measure
-                8'h2: read_data <= 32'h01_1d_32_00; //Read x0
-                8'h3: read_data <= 32'h01_1d_33_00; //Read x1
+                8'h0 : read_data <= 32'h01_1d_00_00; //Read device ID
+                8'h1 : read_data <= 32'h02_1d_2d_08; //Change mode on accelerometer to measure
+                8'h2 : read_data <= 32'h01_1d_32_00; //Read x0
+                8'h3 : read_data <= 32'h01_1d_33_00; //Read x1
 
                 default : begin
                     read_data <= 32'h0;
