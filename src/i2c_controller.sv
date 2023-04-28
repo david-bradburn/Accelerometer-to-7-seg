@@ -340,7 +340,10 @@ end
 
 
 always @(posedge clk) begin
-   if (state != IDLE | state != ERROR) begin
+   if (state = IDLE | state = ERROR) begin
+      scl_oe <= 1'b0;
+      clk_count <= 0;
+   end else begin
       scl_oe <= 1'b1;
       if (clk_count < (SCL_CLK_COUNT/2)) begin
          scl_i <= 1'b1;
@@ -355,9 +358,6 @@ always @(posedge clk) begin
       else begin
          clk_count <= 0;
       end
-   end else begin
-      scl_oe <= 1'b0;
-      clk_count <= 0;
    end
 end
 
