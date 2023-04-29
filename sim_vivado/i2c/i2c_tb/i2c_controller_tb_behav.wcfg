@@ -5,22 +5,22 @@
    <db_ref_list>
       <db_ref path="i2c_controller_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="\$unit_i2c_controller_sv " />
+            <top_module name="\$unit_i2c_controller_sv_3454055536 " />
             <top_module name="glbl" />
             <top_module name="i2c_controller_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="73.600001 us"></ZoomEndTime>
-      <Cursor1Time time="0.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="295.201 ns"></ZoomEndTime>
+      <Cursor1Time time="10.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="141"></NameColumnWidth>
+      <NameColumnWidth column_width="137"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="23" />
    <wave_markers>
       <marker time="0" label="" />
    </wave_markers>
@@ -51,14 +51,6 @@
    <wvobject fp_name="/i2c_controller_tb/GSENSOR_SDA_oe" type="logic">
       <obj_property name="ElementShortName">GSENSOR_SDA_oe</obj_property>
       <obj_property name="ObjectShortName">GSENSOR_SDA_oe</obj_property>
-   </wvobject>
-   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/sda_oe" type="logic">
-      <obj_property name="ElementShortName">sda_oe</obj_property>
-      <obj_property name="ObjectShortName">sda_oe</obj_property>
-   </wvobject>
-   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/sda_o" type="logic">
-      <obj_property name="ElementShortName">sda_o</obj_property>
-      <obj_property name="ObjectShortName">sda_o</obj_property>
    </wvobject>
    <wvobject fp_name="/i2c_controller_tb/ALT_ADDRESS" type="logic">
       <obj_property name="ElementShortName">ALT_ADDRESS</obj_property>
@@ -103,5 +95,25 @@
    <wvobject fp_name="/i2c_controller_tb/ready" type="logic">
       <obj_property name="ElementShortName">ready</obj_property>
       <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider21">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/scl_o" type="logic">
+      <obj_property name="ElementShortName">scl_o</obj_property>
+      <obj_property name="ObjectShortName">scl_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/scl_oe" type="logic">
+      <obj_property name="ElementShortName">scl_oe</obj_property>
+      <obj_property name="ObjectShortName">scl_oe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/sda_oe" type="logic">
+      <obj_property name="ElementShortName">sda_oe</obj_property>
+      <obj_property name="ObjectShortName">sda_oe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2c_controller_tb/i2c_controller_dut/sda_i" type="logic">
+      <obj_property name="ElementShortName">sda_i</obj_property>
+      <obj_property name="ObjectShortName">sda_i</obj_property>
    </wvobject>
 </wave_config>

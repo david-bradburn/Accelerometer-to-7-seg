@@ -55,11 +55,11 @@ assign GSENSOR_CS_N = 1'b1; //so we are tied into i2c mode
 
 integer clk_count = 0;
 reg scl_oe = 1; //just held high
-reg scl_o = 0;
+reg scl_o;
 reg scl_i = 0;
 reg sda_oe = 0;
-reg sda_i = 0;
-reg sda_o = 0;
+reg sda_i = 1;
+reg sda_o = 1;
 
 reg transistion_state = 0;
 
@@ -340,7 +340,7 @@ end
 
 
 always @(posedge clk) begin
-   if (state = IDLE | state = ERROR) begin
+   if (state == IDLE | state == ERROR) begin
       scl_oe <= 1'b0;
       clk_count <= 0;
    end else begin

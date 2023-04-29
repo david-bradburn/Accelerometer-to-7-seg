@@ -56,7 +56,7 @@ module i2c_controller_tb;
     .ready  ( ready)
   );
 
-  logic GSENSOR_SDA_i;
+  logic GSENSOR_SDA_i = 1'b1;
   logic GSENSOR_SDA_oe = 1'b0;
   
   assign GSENSOR_SDA = GSENSOR_SDA_oe ? GSENSOR_SDA_i : 1'bz;
@@ -124,7 +124,7 @@ module i2c_controller_tb;
 
     #107520;
     //just idle it
-    #1000;
+    #10000;
     //write time
     REG_ADDR <= 8'hee;
     WRITE_DATA <= 8'hAB;
