@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Accerleromter_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Accerleromter_tb" />
+            <top_module name="\$unit_Accerleromter_sv_1038112757 " />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,558.001 ns"></ZoomEndTime>
+      <Cursor1Time time="5.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/Accerleromter_tb/HEX0" type="array">
+      <obj_property name="ElementShortName">HEX0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/HEX1" type="array">
+      <obj_property name="ElementShortName">HEX1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/HEX2" type="array">
+      <obj_property name="ElementShortName">HEX2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/HEX3" type="array">
+      <obj_property name="ElementShortName">HEX3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/HEX4" type="array">
+      <obj_property name="ElementShortName">HEX4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX4[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/HEX5" type="array">
+      <obj_property name="ElementShortName">HEX5[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HEX5[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/KEY" type="array">
+      <obj_property name="ElementShortName">KEY[1:0]</obj_property>
+      <obj_property name="ObjectShortName">KEY[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/LEDR" type="array">
+      <obj_property name="ElementShortName">LEDR[9:0]</obj_property>
+      <obj_property name="ObjectShortName">LEDR[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/debugGPIO" type="array">
+      <obj_property name="ElementShortName">debugGPIO[35:0]</obj_property>
+      <obj_property name="ObjectShortName">debugGPIO[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/GSENSOR_CS_N" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_CS_N</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_CS_N</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/GSENSOR_INT" type="array">
+      <obj_property name="ElementShortName">GSENSOR_INT[2:1]</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_INT[2:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/GSENSOR_SCLK" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_SCLK</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_SCLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/GSENSOR_SDI" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_SDI</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_SDI</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/GSENSOR_SDO" type="logic">
+      <obj_property name="ElementShortName">GSENSOR_SDO</obj_property>
+      <obj_property name="ObjectShortName">GSENSOR_SDO</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider16">
+      <obj_property name="label">DUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/Accerleromter_dut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/Accerleromter_dut/refresh_pulse" type="logic">
+      <obj_property name="ElementShortName">refresh_pulse</obj_property>
+      <obj_property name="ObjectShortName">refresh_pulse</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider36">
+      <obj_property name="label">i2c_controller</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/Accerleromter_dut/G_SENSOR_i2c/state" type="array">
+      <obj_property name="ElementShortName">state[31:0]</obj_property>
+      <obj_property name="ObjectShortName">state[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Accerleromter_tb/Accerleromter_dut/G_SENSOR_i2c/scl_oe" type="logic">
+      <obj_property name="ElementShortName">scl_oe</obj_property>
+      <obj_property name="ObjectShortName">scl_oe</obj_property>
+   </wvobject>
+</wave_config>
