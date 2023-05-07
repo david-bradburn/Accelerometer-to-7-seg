@@ -72,7 +72,7 @@ wire scl_3qtr;
 reg nack_sent = 0;
 
 wire scl_start;
-assign scl_start = (clk_count == 0)   ?  1 : 0;
+assign scl_start = (clk_count == 0)                 ?  1 : 0;
 assign scl_1qtr  = (clk_count == SCL_CLK_COUNT/4)   ?  1 : 0;
 assign scl_2qtr  = (clk_count == SCL_CLK_COUNT/2)   ?  1 : 0;
 assign scl_3qtr  = (clk_count == 3*SCL_CLK_COUNT/4) ?  1 : 0;
